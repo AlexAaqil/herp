@@ -5,7 +5,7 @@ A blue-print for laravel blade projects with an admin dashboard and authenticati
 ## Installation
 1. Clone the Repository
     ```bash
-    git clone git@github.com:AlexAaqil/laravel-blade-template.git
+    git clone git@github.com:AlexAaqil/herp.git
     ```
 2. Install the dependencies
     ```bash
