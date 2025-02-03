@@ -57,8 +57,8 @@ statistics {
 users {
     $table->string('first_name');
     $table->string('last_name');
-    $table->string('username')->unique()->nullable();
     $table->string('email')->unique();
+    $table->string('username')->unique()->nullable();
     $table->string('phone_number');
     $table->string('phone_other')->nullable();
     $table->unsignedTinyInteger('user_level')->default(2);
@@ -69,8 +69,8 @@ users {
     $table->char('gender', 1)->nullable();
     $table->string('image')->nullable();
     $table->string('address')->nullable();
-    $table->string('password');
     $table->timestamp('email_verified_at')->nullable();
+    $table->string('password');
     $table->rememberToken();
     $table->timestamps();
 }
