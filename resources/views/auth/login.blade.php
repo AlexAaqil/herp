@@ -30,10 +30,10 @@
     
                 <button type="submit">Login</button>
     
-                <p>
+                {{-- <p>
                     Don't have an account?
                     <a href="{{ route('register') }}">Sign up</a>
-                </p>
+                </p> --}}
             </form>
         </div>
     </section>

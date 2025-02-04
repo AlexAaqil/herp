@@ -23,6 +23,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('assign-super-admin', function ($user) {
+            return $user->user_level_label === 'super admin';
+        });
+
         Gate::define('view-as-super-admin', function (User $user) {
             return $user->user_level_label === 'super admin';
         });
