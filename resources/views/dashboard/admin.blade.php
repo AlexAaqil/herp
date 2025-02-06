@@ -6,29 +6,29 @@
         </div>
 
         <div class="stat">
-            <span>{{ $count_users }}</span>
-            <span>Out of {{ $count_all_users }} users</span>
+            <span>{{ $count_teachers }}</span>
+            <span>Teachers out of {{ $count_all_users }} users</span>
         </div>
 
         <div class="stat">
-            <span>{{ $count_users }}</span>
-            <span>Out of {{ $count_all_users }} users</span>
+            <span>{{ $count_classrooms }}</span>
+            <span>Classrooms and 1000 dorms</span>
         </div>
 
         <div class="stat">
-            <span>{{ $count_users }}</span>
-            <span>Out of {{ $count_all_users }} users</span>
+            <span>xxx</span>
+            <span>Out of xxx users</span>
         </div>
 
         <div class="stat">
-            <span>{{ $count_users }}</span>
-            <span>Out of {{ $count_all_users }} users</span>
+            <span>xxx</span>
+            <span>Out of xxx users</span>
         </div>
     </div>
 
     <div class="section messages">
-        <p class="title">Unread Messages</p>
-        @foreach($messages as $message)
+        <p class="title">{{ $count_unread_messages }} Unread Messages</p>
+        @foreach($unread_messages as $message)
             <div class="message">
                 <p class="stack">
                     <a href="{{ route('messages.edit', $message->id) }}">
