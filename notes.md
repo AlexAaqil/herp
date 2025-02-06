@@ -92,7 +92,7 @@ classrooms {
     $table->string('name')->unique();
 
     $table->foreignId('classroom_category_id')->constrained('classroom_categories')->cascadeOnDelete();
-    $table->foreignId('class_teacher_id')->nullable()->constrained('users)->cascadeOnDelete();
+    $table->foreignId('class_teacher_id')->nullable()->constrained('users')->cascadeOnDelete();
 }
 
 dorms {
@@ -315,6 +315,7 @@ const USERLEVELS = [
     3 => 'accountant',
     4 => 'store keeper',
     5 => 'librarian',
+    6 => 'bom',
 ];
 
 // Student
