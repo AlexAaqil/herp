@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Users;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Validation\Rules;
@@ -14,7 +15,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::orderBy('first_name')->get();
+        $users = User::whereNotIn('user_level', [2])->orderBy('first_name')->get();
         $count_users = $users->count();
         $count_admins = $users->whereIn('user_level', [0, 1])->count();
         $count_inactive = $users->where('user_status', 0)->count();
@@ -33,13 +34,13 @@ class UserController extends Controller
             'first_name' => ['required', 'string', 'max:80'],
             'last_name' => ['required', 'string', 'max:120'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'phone_main' => ['required', 'max:30', 'unique:users,phone_main','regex:/^(07|01)\d{8,}$/'],
-            'user_level' => ['required', 'exists:user_levels,id'],
+            'phone_number' => ['nullable', 'max:30', 'unique:users,phone_number','regex:/^(07|01)\d{8,}$/'],
+            'user_level' => ['required', 'in:'.implode(',', array_keys(User::USERLEVELS))],
             'emp_code' => ['nullable'],
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
         ], [
-            'phone_main.regex' => 'The phone number must start with 07 or 01',
-            'phone_main.unique' => 'That phone number has been used.',
+            'phone_number.regex' => 'The phone number must start with 07 or 01',
+            'phone_number.unique' => 'That phone number has been used.',
         ]);
 
         $generated_password = $request->password ?? Str::random(8);
@@ -48,7 +49,7 @@ class UserController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'phone_main' => $request->phone_main ?? 254746055487,
+            'phone_number' => $request->phone_number,
             'user_level' => $request->user_level,
             'emp_code' => $request->emp_code,
             'password' => Hash::make($request->password ?? $generated_password),
