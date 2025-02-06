@@ -63,7 +63,11 @@ class User extends Authenticatable implements MustVerifyEmail
     const USERLEVELS = [
         0 => 'super admin',
         1 => 'admin',
-        2 => 'user',
+        2 => 'teacher',
+        3 => 'accountant',
+        4 => 'store keeper',
+        5 => 'librarian',
+        6 => 'bom',
     ];
 
     const USERSTATUS = [

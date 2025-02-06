@@ -27,12 +27,33 @@
                                         type="radio" 
                                         name="user_level" 
                                         value="{{ $key }}"
-                                        {{ old('user_level') == $key ? 'checked' : '' }}>
+                                        {{ old('user_level', 2) == $key ? 'checked' : '' }}>
                                     <span>{{ ucfirst($label) }}</span>
                                 </label>
                             @endforeach
                         </div>
                         <x-input-error field="user_level" />
+                    </div>
+
+                    <div class="inputs">
+                        <label for="emp_code">Employee Code</label>
+                        <input type="text" name="emp_code" id="emp_code" placeholder="Employee Code" value={{ old('emp_code') }}>
+                        <x-input-error field="emp_code" />
+                    </div>
+
+                    <div class="inputs">
+                        <label for="emp_date">Employment Date</label>
+                        <input type="date" name="emp_date" id="emp_date" value={{ old('emp_date') }}>
+                        <x-input-error field="emp_date" />
+                    </div>
+                </div>
+
+                <div class="input_group_3">
+                    <div class="inputs">
+                        <label for="email" class="required">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Email Address"
+                            value="{{ old('email') }}">
+                        <span class="inline_alert">{{ $errors->first('email') }}</span>
                     </div>
 
                     <div class="inputs">
@@ -47,22 +68,6 @@
                         <input type="text" name="last_name" id="last_name" placeholder="Last Name"
                             value={{ old('last_name') }}>
                         <span class="inline_alert">{{ $errors->first('last_name') }}</span>
-                    </div>
-                </div>
-
-                <div class="input_group">
-                    <div class="inputs">
-                        <label for="email" class="required">Email Address</label>
-                        <input type="email" name="email" id="email" placeholder="Email Address"
-                            value="{{ old('email') }}">
-                        <span class="inline_alert">{{ $errors->first('email') }}</span>
-                    </div>
-    
-                    <div class="inputs">
-                        <label for="phone_main" class="required">Phone Number</label>
-                        <input type="text" name="phone_main" id="phone_main" placeholder="Phone Number"
-                            value="{{ old('phone_main') }}">
-                        <span class="inline_alert">{{ $errors->first('phone_main') }}</span>
                     </div>
                 </div>
 
@@ -92,15 +97,9 @@
                     </div>
 
                     <div class="inputs">
-                        <label for="emp_code">Employee Code</label>
-                        <input type="text" name="emp_code" id="emp_code" placeholder="Employee Code" value={{ old('emp_code') }}>
-                        <x-input-error field="emp_code" />
-                    </div>
-
-                    <div class="inputs">
-                        <label for="emp_date">Employment Date</label>
-                        <input type="date" name="emp_date" id="emp_date" value={{ old('emp_date') }}>
-                        <x-input-error field="emp_date" />
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}">
+                        <x-input-error field="phone_number" />
                     </div>
                 </div>
 
