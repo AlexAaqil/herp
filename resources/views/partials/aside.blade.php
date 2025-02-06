@@ -45,6 +45,12 @@
                 'level' => ['super admin', 'admin'],
             ],
             [
+                'route' => 'dorms.index',
+                'icon' => 'fas fa-house',
+                'text' => 'Dorms',
+                'level' => ['super admin', 'admin'],
+            ],
+            [
                 'route' => 'messages.index',
                 'icon' => 'fas fa-comment',
                 'text' => 'Messages',
