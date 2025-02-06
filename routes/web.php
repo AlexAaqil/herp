@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Users\ProfileController;
+use App\Http\Controllers\Users\UserController;
+use App\Http\Controllers\Users\TeacherController;
+use App\Http\Controllers\Classrooms\ClassroomCategoryController;
+use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -21,6 +24,10 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');
+        Route::resource('teachers', TeacherController::class)->only('index', 'edit');
+
+        Route::resource('classroom-categories', ClassroomCategoryController::class)->only('store', 'edit', 'update', 'destroy');
+        Route::resource('classrooms', ClassroomController::class)->except('show');
 
         Route::resource('messages', MessageController::class)->only('index', 'edit', 'destroy');
     });

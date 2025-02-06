@@ -29,7 +29,19 @@
             [
                 'route' => 'users.index',
                 'icon' => 'fas fa-users',
-                'text' => 'Users',
+                'text' => 'Staff',
+                'level' => ['super admin', 'admin'],
+            ],
+            [
+                'route' => 'teachers.index',
+                'icon' => 'fas fa-chalkboard-teacher',
+                'text' => 'Teachers',
+                'level' => ['super admin', 'admin'],
+            ],
+            [
+                'route' => 'classrooms.index',
+                'icon' => 'fas fa-chalkboard',
+                'text' => 'Classrooms',
                 'level' => ['super admin', 'admin'],
             ],
             [
