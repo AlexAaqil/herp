@@ -2,7 +2,7 @@
     <div class="section stats">
         <div class="stat">
             <span>{{ $count_users }}</span>
-            <span>Out of {{ $count_all_users }} users</span>
+            <span>Staff members out of {{ $count_all_users }} users</span>
         </div>
 
         <div class="stat">
