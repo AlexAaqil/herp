@@ -46,8 +46,20 @@
             ],
             [
                 'route' => 'dorms.index',
-                'icon' => 'fas fa-house',
+                'icon' => 'fas fa-house-user',
                 'text' => 'Dorms',
+                'level' => ['super admin', 'admin'],
+            ],
+            [
+                'route' => 'subjects.index',
+                'icon' => 'fas fa-house-user',
+                'text' => 'Subjects',
+                'level' => ['super admin', 'admin'],
+            ],
+            [
+                'route' => 'grades.index',
+                'icon' => 'fas fa-award',
+                'text' => 'Grades',
                 'level' => ['super admin', 'admin'],
             ],
             [
