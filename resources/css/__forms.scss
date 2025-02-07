@@ -51,6 +51,31 @@ form {
         padding: 8px 24px;
         border-radius: 8px 8px 0 0;
     }
+
+    .details {
+        margin: 0 0 1.6em;
+        color: #000;
+
+        .image {
+            width: 100px;
+            height: 100px;
+            margin: 0 0 0.5em;
+        }
+
+        a {
+            color: blue;
+        }
+
+        .columns {
+            padding: 12px 24px;
+            display: grid;
+            gap: 2em;
+
+            form {
+                padding: unset;
+            }
+        }
+    }
     
     form {
         padding: 12px 24px;
@@ -67,15 +92,6 @@ form {
                 width: 100px;
                 height: 100px;
                 cursor: grab;
-            }
-        }
-
-        .details {
-            margin: 0 0 1.6em;
-
-            .image {
-                width: 100px;
-                height: 100px;
             }
         }
 
@@ -164,6 +180,14 @@ form {
 
         .input_group_3 {
             grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    .custom_form {
+        .details {
+            .columns {
+                grid-template-columns: 1fr 2fr;
+            }
         }
     }
 }

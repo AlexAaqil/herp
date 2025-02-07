@@ -59,6 +59,11 @@ a:hover {
   color: #efefef;
 }
 
+ul,
+ol {
+  list-style-position: inside;
+}
+
 .title {
   font-weight: bold;
 }
@@ -476,7 +481,7 @@ footer .copyright {
 }
 .table table tbody tr td p:not(:first-of-type),
 .table table tbody tr td div:not(:first-of-type) {
-  margin: 0.4em 0 0;
+  margin: 0.2em 0 0;
 }
 
 @media screen and (width >= 726px) {
@@ -533,6 +538,26 @@ form .inputs {
   padding: 8px 24px;
   border-radius: 8px 8px 0 0;
 }
+.custom_form .details {
+  margin: 0 0 1.6em;
+  color: #000;
+}
+.custom_form .details .image {
+  width: 100px;
+  height: 100px;
+  margin: 0 0 0.5em;
+}
+.custom_form .details a {
+  color: blue;
+}
+.custom_form .details .columns {
+  padding: 12px 24px;
+  display: grid;
+  gap: 2em;
+}
+.custom_form .details .columns form {
+  padding: unset;
+}
 .custom_form form {
   padding: 12px 24px;
 }
@@ -547,13 +572,6 @@ form .inputs {
   width: 100px;
   height: 100px;
   cursor: grab;
-}
-.custom_form form .details {
-  margin: 0 0 1.6em;
-}
-.custom_form form .details .image {
-  width: 100px;
-  height: 100px;
 }
 .custom_form form .custom_radio_buttons {
   display: flex;
@@ -619,6 +637,9 @@ form .inputs {
   }
   form .input_group_3 {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .custom_form .details .columns {
+    grid-template-columns: 1fr 2fr;
   }
 }
 button {

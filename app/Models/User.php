@@ -94,4 +94,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return self::USERLEVELS[$this->user_level] ?? 'unknown level';
     }
+
+    public function classroomSubjects()
+    {
+        return $this->hasMany(ClassroomSubjectTeacher::class, 'teacher_id');
+    }
 }

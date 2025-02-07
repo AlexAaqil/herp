@@ -25,6 +25,7 @@
                                 <th class="center">#</th>
                                 <th>Name</th>
                                 <th>Contact</th>
+                                <th>Subjects</th>
                                 <th class="actions center">Actions</th>
                             </tr>
                         </thead>
@@ -43,9 +44,16 @@
                                             {{ $teacher->full_name }}
                                         @endif
                                     </td>
-                                    <td class="stack {{ $teacher->email_verified_at == null ? 'unverified' : '' }}">
-                                        <span>{{ $teacher->email }}</span>
-                                        <span>{{ $teacher->phone_numbers }}</span>
+                                    <td class="{{ $teacher->email_verified_at == null ? 'unverified' : '' }}">
+                                        <p>{{ $teacher->email }}</p>
+                                        <p>{{ $teacher->phone_numbers }}</p>
+                                    </td>
+                                    <td>
+                                        @forelse ($teacher->classroomSubjects as $assignment)
+                                            <p>{{ $assignment->classroom->name . ' - ' . $assignment->subject->name }}</p>
+                                        @empty
+                                            <p>-</p>
+                                        @endforelse
                                     </td>
                                     <td class="actions center">
                                         <div class="action">

@@ -29,6 +29,11 @@ a {
     }
 }
 
+ul,
+ol {
+    list-style-position: inside;
+}
+
 .title {
     font-weight: bold;
 }
