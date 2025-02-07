@@ -8,6 +8,8 @@ use App\Http\Controllers\Users\TeacherController;
 use App\Http\Controllers\Classrooms\ClassroomCategoryController;
 use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\DormController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\GradeController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -31,6 +33,10 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
         Route::resource('classrooms', ClassroomController::class)->except('show');
 
         Route::resource('dorms', DormController::class)->except('show');
+
+        Route::resource('subjects', SubjectController::class)->except('show');
+
+        Route::resource('grades', GradeController::class)->except('show');
 
         Route::resource('messages', MessageController::class)->only('index', 'edit', 'destroy');
     });
