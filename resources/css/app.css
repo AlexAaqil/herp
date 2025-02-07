@@ -275,11 +275,15 @@ aside .footer .logout form button i {
     border-top: 1px solid #666666;
   }
   aside ul li a {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.95em 1fr;
     align-items: center;
-    gap: 0.2em;
+    gap: 0.4em;
     font-size: 0.92em;
     letter-spacing: 0.2px;
+  }
+  aside ul li a i {
+    justify-self: center;
   }
   aside .footer {
     left: 0;
