@@ -102,16 +102,16 @@ dorms {
     $table->string('name')->unique();
 }
 
-grades {
-    $table->char('grade', 2)->unique();
-    $table->unsignedTinyInteger('min_marks');
-    $table->unsignedTinyInteger('max_marks');
-}
-
 subjects {
     $table->string('name', 100)->unique();
     $table->string('acronym', 10)->nullable();
     $table->string('code', 20)->nullable()->unique();
+}
+
+grades {
+    $table->char('grade', 2)->unique();
+    $table->unsignedTinyInteger('min_marks');
+    $table->unsignedTinyInteger('max_marks');
 }
 
 classroom_subject_teacher {
