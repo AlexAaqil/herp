@@ -2,6 +2,9 @@
 App
 - Implement pagination.
 
+Classrooms
+- Add searchable select for teachers.
+
 # Features
 users {
     super admin
