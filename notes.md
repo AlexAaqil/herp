@@ -5,6 +5,9 @@ App
 Classrooms
 - Add searchable select for teachers.
 
+Teachers
+- Handle all CRUD operations for teachers in the TeacherController to avoid re-routing the uses page.
+
 # Features
 users {
     super admin
