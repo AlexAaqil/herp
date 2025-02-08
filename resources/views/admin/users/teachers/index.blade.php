@@ -49,7 +49,7 @@
                                         <p>{{ $teacher->phone_numbers }}</p>
                                     </td>
                                     <td>
-                                        @forelse ($teacher->classroomSubjects as $assignment)
+                                        @forelse ($teacher->teacherSubjects as $assignment)
                                             <p>{{ $assignment->classroom->name . ' - ' . $assignment->subject->name }}</p>
                                         @empty
                                             <p>-</p>

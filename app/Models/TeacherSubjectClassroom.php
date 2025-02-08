@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Classrooms\Classroom;
 
-class ClassroomSubjectTeacher extends Model
+class TeacherSubjectClassroom extends Model
 {
+    protected $table = 'teacher_subject_classroom';
+
     protected $fillable = [
         'classroom_id',
         'subject_id',

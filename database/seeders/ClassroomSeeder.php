@@ -16,28 +16,28 @@ class ClassroomSeeder extends Seeder
         $classrooms = [
             [
                 'name' => '1 South',
-                'classroom_category_id' => '1',
+                'classroom_category_id' => 1,
                 'class_teacher_id' => 3,
             ],
             [
                 'name' => '1 North',
-                'classroom_category_id' => '1',
+                'classroom_category_id' => 1,
                 'class_teacher_id' => 4,
             ],
             [
                 'name' => '2 South',
-                'classroom_category_id' => '2',
+                'classroom_category_id' => 2,
                 'class_teacher_id' => 4,
             ],
             [
                 'name' => '3 South',
-                'classroom_category_id' => '3',
+                'classroom_category_id' => 3,
                 'class_teacher_id' => 5,
             ],
             [
                 'name' => '4 South',
-                'classroom_category_id' => '4',
-                'class_teacher_id' => 6,
+                'classroom_category_id' => 4,
+                'class_teacher_id' => 5,
             ],
         ];
 

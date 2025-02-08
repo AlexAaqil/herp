@@ -10,7 +10,7 @@ use App\Http\Controllers\Classrooms\ClassroomController;
 use App\Http\Controllers\DormController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\GradeController;
-use App\Http\Controllers\ClassroomSubjectTeacherController;
+use App\Http\Controllers\TeacherSubjectClassroomController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -29,7 +29,7 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');
         Route::resource('teachers', TeacherController::class)->only('index', 'edit', 'update');
-        Route::resource('teacher-subjects',ClassroomSubjectTeacherController::class)->only('store', 'edit', 'update', 'destroy');
+        Route::resource('teacher-subjects',TeacherSubjectClassroomController::class)->only('store', 'edit', 'update', 'destroy');
 
         Route::resource('classroom-categories', ClassroomCategoryController::class)->only('store', 'edit', 'update', 'destroy');
         Route::resource('classrooms', ClassroomController::class)->except('show');

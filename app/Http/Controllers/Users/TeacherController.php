@@ -12,7 +12,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = User::where('user_level', 2)->with('classroomSubjects.classroom', 'classroomSubjects.subject')->orderBy('first_name')->get();
+        $teachers = User::where('user_level', 2)->with('teacherSubjects.classroom', 'teacherSubjects.subject')->orderBy('first_name')->get();
         $count_teachers = count($teachers);
         $count_inactive_teachers = $teachers->where('user_status', 0)->count();
 
@@ -23,7 +23,7 @@ class TeacherController extends Controller
     {
         $classrooms = Classroom::orderBy('name')->get();
         $subjects = Subject::orderBy('name')->get();
-        $teacher->load('classroomSubjects.classroom', 'classroomSubjects.subject');
+        $teacher->load('teacherSubjects.classroom', 'teacherSubjects.subject');
 
         return view('admin.users.teachers.edit', compact('teacher', 'classrooms', 'subjects'));
     }

@@ -103,7 +103,7 @@
             <div class="details">
                 <div class="columns">
                     <div class="column">
-                        @forelse ($teacher->classroomSubjects as $assignment)
+                        @forelse ($teacher->teacherSubjects as $assignment)
                             <p>
                                 <a href="{{ route('teacher-subjects.edit', $assignment->id) }}">{{ $assignment->classroom->name . ' - ' . $assignment->subject->name }}</a>
                             </p>

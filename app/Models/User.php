@@ -75,16 +75,16 @@ class User extends Authenticatable implements MustVerifyEmail
         0 => 'suspended',
     ];
 
-    public function getFullNameAttribute():string
+    public function getFullNameAttribute(): string
     {
-        return $this->first_name. ' ' . $this->last_name;
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function getPhoneNumbersAttribute(): string
     {
         $numbers = array_filter(
             [$this->phone_number, $this->phone_other],
-            fn ($value) => !is_null($value) && $value !== ''
+            fn($value) => !is_null($value) && $value !== ''
         );
 
         return implode(' / ', $numbers);
@@ -95,8 +95,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return self::USERLEVELS[$this->user_level] ?? 'unknown level';
     }
 
-    public function classroomSubjects()
+    public function teacherSubjects()
     {
-        return $this->hasMany(ClassroomSubjectTeacher::class, 'teacher_id');
+        return $this->hasMany(TeacherSubjectClassroom::class, 'teacher_id');
     }
 }
