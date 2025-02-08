@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Message;
 use App\Models\Classrooms\Classroom;
+use App\Models\Dorm;
 
 class DashboardController extends Controller
 {
@@ -21,6 +22,7 @@ class DashboardController extends Controller
         $count_all_users = User::count();
 
         $count_classrooms = Classroom::count();
+        $count_dorms = Dorm::count();
 
         $unread_messages = Message::latest()
             ->where('status', 0)
@@ -35,6 +37,7 @@ class DashboardController extends Controller
             'count_all_users',
 
             'count_classrooms',
+            'count_dorms',
 
             'unread_messages',
             'count_unread_messages',

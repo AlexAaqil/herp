@@ -12,7 +12,7 @@
 
         <div class="stat">
             <span>{{ $count_classrooms }}</span>
-            <span>Classrooms and 1000 dorms</span>
+            <span>Classrooms and {{ $count_dorms }} dorms</span>
         </div>
 
         <div class="stat">
