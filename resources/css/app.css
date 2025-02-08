@@ -483,6 +483,11 @@ footer .copyright {
 .table table tbody tr td div:not(:first-of-type) {
   margin: 0.2em 0 0;
 }
+.table table tbody tr td img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
 
 @media screen and (width >= 726px) {
   .table .header {
@@ -523,6 +528,9 @@ form select::placeholder {
 form .inputs {
   margin: 0 0 0.8em;
 }
+form input[type=file] {
+  color: #000;
+}
 
 .custom_form {
   background: #fff;
@@ -555,6 +563,17 @@ form .inputs {
   display: grid;
   gap: 2em;
 }
+.custom_form .details .columns .column p {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr;
+  margin: 0.2em 0 0;
+}
+.custom_form .details .columns .column p span:first-of-type {
+  color: #606060;
+}
+.custom_form .details .columns .column .contents {
+  margin: 0.5em 0 0;
+}
 .custom_form .details .columns form {
   padding: unset;
 }
@@ -564,6 +583,9 @@ form .inputs {
 .custom_form form p {
   color: #000;
   margin: 0.4em 0;
+}
+.custom_form form label {
+  color: #606060;
 }
 .custom_form form .image_input {
   margin: 0.4em 0;
@@ -639,7 +661,7 @@ form .inputs {
     grid-template-columns: 1fr 1fr 1fr;
   }
   .custom_form .details .columns {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 button {

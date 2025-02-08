@@ -35,6 +35,10 @@ form {
     .inputs {
         margin: 0 0 0.8em;
     }
+
+    input[type=file] {
+        color: #000;
+    }
 }
 
 .custom_form {
@@ -71,6 +75,24 @@ form {
             display: grid;
             gap: 2em;
 
+            .column {
+                p {
+                    display: grid;
+                    grid-template-columns: 0.8fr 2fr;
+                    margin: 0.2em 0 0;
+
+                    span {
+                        &:first-of-type {
+                            color: darken($faded_text, 30);
+                        }
+                    }
+                }
+
+                .contents {
+                    margin: 0.5em 0 0;
+                }
+            }
+
             form {
                 padding: unset;
             }
@@ -83,6 +105,10 @@ form {
         p {
             color: #000;
             margin: 0.4em 0;
+        }
+
+        label {
+            color: darken($faded_text, 30);
         }
 
         .image_input {
@@ -186,7 +212,7 @@ form {
     .custom_form {
         .details {
             .columns {
-                grid-template-columns: 1fr 2fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
     }

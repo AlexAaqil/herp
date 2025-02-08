@@ -38,6 +38,18 @@
                 'text' => 'Teachers',
                 'level' => ['super admin', 'admin'],
             ],
+            // [
+            //     'route' => 'guardians.index',
+            //     'icon' => 'fas fa-user-friends',
+            //     'text' => 'Parents',
+            //     'level' => ['super admin', 'admin'],
+            // ],
+            [
+                'route' => 'students.index',
+                'icon' => 'fas fa-user-graduate',
+                'text' => 'Students',
+                'level' => ['super admin', 'admin'],
+            ],
             [
                 'route' => 'classrooms.index',
                 'icon' => 'fas fa-chalkboard',
