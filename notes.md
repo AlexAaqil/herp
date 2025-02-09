@@ -8,6 +8,9 @@ Classrooms
 Teachers
 - Handle all CRUD operations for teachers in the TeacherController to avoid re-routing the uses page.
 
+Parents
+- Add the pages for updating and deleting parents.
+
 # Features
 users {
     super admin
@@ -117,14 +120,14 @@ grades {
     $table->unsignedTinyInteger('max_marks');
 }
 
-classroom_subject_teacher {
+teacher_subject_classroom {
     $table->foreignId('classroom_id')->constrained('classrooms')->cascadeOnDelete();
     $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
     $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
     $table->timestamps();
 }
 
-parents {
+guardians {
     $table->string('first_name');
     $table->string('last_name');
     $table->string('phone_number')->unique();
@@ -153,14 +156,11 @@ students {
     $table->timestamps();
 }
 
-parent_student {
-    $table->unsignedBigInteger('student_id');
-    $table->unsignedBigInteger('parent_id');
+guardian_student {
+    $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
+    $table->foreignId('guardian_id')->constrained('guardians')->cascadeOnDelete();
 
-    $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-    $table->foreign('parent_id')->references('id')->on('parents')->onDelete('cascade');
-
-    $table->unique(['student_id', 'parent_id']);
+    $table->unique(['student_id', 'guardian_id']);
 }
 
 disciplinaries {
