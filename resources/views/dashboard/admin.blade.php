@@ -11,13 +11,13 @@
         </div>
 
         <div class="stat">
-            <span>{{ $count_classrooms }}</span>
-            <span>Classrooms and {{ $count_dorms }} dorms</span>
+            <span>{{ $count_all_students }}</span>
+            <span>Students and {{ $count_guardians }} parents</span>
         </div>
 
         <div class="stat">
-            <span>xxx</span>
-            <span>Out of xxx users</span>
+            <span>{{ $count_classrooms }}</span>
+            <span>Classrooms and {{ $count_dorms }} dorms</span>
         </div>
 
         <div class="stat">

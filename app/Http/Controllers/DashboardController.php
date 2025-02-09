@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Message;
 use App\Models\Classrooms\Classroom;
 use App\Models\Dorm;
+use App\Models\Guardian;
+use App\Models\Student;
 
 class DashboardController extends Controller
 {
@@ -20,6 +22,8 @@ class DashboardController extends Controller
             ->where('user_status', 1)
             ->count();
         $count_all_users = User::count();
+        $count_all_students = Student::count();
+        $count_guardians = Guardian::count();
 
         $count_classrooms = Classroom::count();
         $count_dorms = Dorm::count();
@@ -35,6 +39,8 @@ class DashboardController extends Controller
             'count_users',
             'count_teachers',
             'count_all_users',
+            'count_all_students',
+            'count_guardians',
 
             'count_classrooms',
             'count_dorms',
