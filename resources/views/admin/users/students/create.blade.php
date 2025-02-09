@@ -58,7 +58,7 @@
 
                     <div class="inputs">
                         <label for="year_admitted">Year Admitted</label>
-                        <input type="number" id="year_admitted" name="year_admitted" min="2010" max="2040" step="1" value="{{ old('year_admitted') }}">
+                        <input type="date" name="year_admitted" id="year_admitted" value="{{ old('year_admitted') }}">
                         <x-input-error field="year_admitted" />
                     </div>
 
