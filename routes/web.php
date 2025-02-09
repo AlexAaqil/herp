@@ -14,6 +14,7 @@ use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\TeacherSubjectClassroomController;
 use App\Http\Controllers\GuardianStudentController;
+use App\Http\Controllers\DisciplinaryController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -28,6 +29,8 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('disciplinaries', DisciplinaryController::class)->except('show');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

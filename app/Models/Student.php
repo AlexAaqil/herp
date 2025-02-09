@@ -39,4 +39,9 @@ class Student extends Model
     {
         return $this->belongsToMany(Guardian::class);
     }
+
+    public function disciplinaries()
+    {
+        return $this->hasMany(Disciplinary::class);
+    }
 }

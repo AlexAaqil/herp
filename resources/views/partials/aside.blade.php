@@ -51,6 +51,12 @@
                 'level' => ['super admin', 'admin'],
             ],
             [
+                'route' => 'disciplinaries.index',
+                'icon' => 'fas fa-balance-scale',
+                'text' => 'Disciplinaries',
+                'level' => ['super admin', 'admin', 'teacher'],
+            ],
+            [
                 'route' => 'classrooms.index',
                 'icon' => 'fas fa-chalkboard',
                 'text' => 'Classrooms',
