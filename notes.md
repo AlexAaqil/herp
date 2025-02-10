@@ -187,7 +187,7 @@ leaveouts {
 
 leaves {
     $table->string('category');
-    $table->text('reason');
+    $table->text('comment');
     $table->date('from_date');
     $table->date('to_date');
     $table->boolean('status')->default(false);
@@ -331,15 +331,10 @@ const GRADUATION_STATUS = [
     2 => 'transfered',
 ];
 
-// Disciplinaries
-const DISCIPLINARYCATEGORIES = [
-    'minor',
-    'major',
-];
-
 // Leaveouts
 const LEAVEOUTSCATEGORIES = [
     'casual',
+    'emergency',
     'sick',
 ];
 
