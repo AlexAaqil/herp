@@ -1,4 +1,3 @@
-$aside_text_color: #fff;
 $aside_width: 15%;
 
 aside {
@@ -18,7 +17,7 @@ aside {
     }
 
     a {
-        color: $aside_text_color;
+        color: $text_color;
         text-decoration: none;
     }
 
@@ -49,7 +48,7 @@ aside {
         color: $link_color;
 
         a {
-            color: $aside_text_color;
+            color: $text_color;
             font-weight: bold;
             opacity: 1;
         }
@@ -99,7 +98,7 @@ aside {
 
             span {
                 font-size: 0.85em;
-                color: $aside_text_color;
+                color: $text_color;
             }
 
             .text {

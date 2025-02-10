@@ -44,16 +44,21 @@ form {
 .custom_form {
     background: #fff;
     padding: 0 0 12px;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     margin: 0 0 1em;
+    border: 1px solid $faded_line;
 
     .header {
         display: flex;
         gap: 0.5em;
-        background: #000;
-        color: #efefef;
+        background: $elements_background;
+        color: $elements_color;
         padding: 8px 24px;
         border-radius: 8px 8px 0 0;
+
+        a {
+            color: $light_link_color;
+        }
     }
 
     .details {
@@ -67,7 +72,7 @@ form {
         }
 
         a {
-            color: blue;
+            color: $link_color;
         }
 
         .columns {
@@ -108,7 +113,7 @@ form {
         }
 
         label {
-            color: darken($faded_text, 30);
+            color: $faded_text;
         }
 
         .image_input {

@@ -3,22 +3,27 @@ $theme2: #54b7b1;
 $theme4: #df852d;
 $theme3: #eed9c4;
 
-$background_color: #2b3230;
+// $background_color: #2b3230;
+$background_color: #ffffff;
 $faded_background: #3b3b3b;
+$elements_background: #000;
 
 $badge_background: #54b7b1;
 $badge_color: #fff;
 
-$text_color: #efefef;
-$link_color: $theme2;
-$faded_text: #acacac;
+// $text_color: #efefef;
+$text_color: #000;
+$link_color: blue;
+$light_link_color: lightblue;
+$elements_color: #fff;
+$faded_text: #575757;
 
 $danger: #ff0000;
 $success: #008000;
 $status: #49cefa;
 $warning: #c28005;
 
-$faded_line: #666666;
+$faded_line: #c4c4c4;
 
 .read,
 .inactive {

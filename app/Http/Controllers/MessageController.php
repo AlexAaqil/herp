@@ -13,9 +13,10 @@ class MessageController extends Controller
             ->orderBy('status')
             ->latest()
             ->get();
+        $count_messages = count($messages);
         $unread_messages = $messages->where('status', 0)->count();
 
-        return view('admin.messages.index', compact('messages', 'unread_messages'));
+        return view('admin.messages.index', compact('messages', 'count_messages', 'unread_messages'));
     }
 
     public function store(Request $request)

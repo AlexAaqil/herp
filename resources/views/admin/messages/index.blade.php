@@ -10,7 +10,8 @@
                     <div class="details">
                         <p class="title">Messages</p>
                         <p class="stats">
-                            <span>{{ $unread_messages }} {{ Str::plural('unread message', $unread_messages) }}</span>
+                            <span>{{ $count_messages }} {{ Str::plural('message', $count_messages) }}</span>
+                            <span>{{ $unread_messages }} Unread</span>
                         </p>
                     </div>
 
@@ -25,7 +26,7 @@
                             <th>Contact</th>
                             <th>Message</th>
                             <th>Time</th>
-                            <th class="actions">Actions</th>
+                            <th class="actions center">Actions</th>
                         </tr>
                     </thead>
         
