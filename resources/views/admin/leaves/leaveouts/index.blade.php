@@ -45,7 +45,7 @@
                                     </td>
                                     <td>{{ $leaveout->category }}</td>
                                     <td>{!! Illuminate\Support\Str::limit($leaveout->comment, 50, ' ...') !!}</td>
-                                    <td>{{ $leaveout->from_date . ' to ' . $leaveout->to_date  }}</td>
+                                    <td>{{ $leaveout->from_date->format('d-m-Y') . ' to ' . $leaveout->to_date->format('d-m-Y')  }}</td>
                                     <td>{{ $leaveout->createdBy->full_name }}</td>
                                     <td class="actions center">
                                         <div class="action_buttons">
@@ -56,7 +56,7 @@
                                             </div>
     
                                             <div class="action">
-                                                <a href="{{ route('leaveouts.edit', $leaveout->id) }}">
+                                                <a href="{{ route('leaveouts.print', $leaveout->id) }}">
                                                     <span class="fas fa-print"></span> 
                                                 </a> 
                                             </div>

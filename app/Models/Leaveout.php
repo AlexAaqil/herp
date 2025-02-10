@@ -22,6 +22,11 @@ class Leaveout extends Model
         'sick',
     ];
 
+    protected $casts = [
+        'from_date' => 'datetime',
+        'to_date' => 'datetime',
+    ];
+
     protected static function boot()
     {
         parent::boot();

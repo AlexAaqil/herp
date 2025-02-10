@@ -34,6 +34,7 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::resource('disciplinaries', DisciplinaryController::class)->except('show');
 
     Route::resource('leaveouts', LeaveoutController::class)->except('show');
+    Route::get('/leaveouts/{leaveout}/print', [LeaveoutController::class, 'print'])->name('leaveouts.print');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

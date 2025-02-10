@@ -45,13 +45,25 @@
                 <div class="input_group">
                     <div class="inputs">
                         <label for="from_date">From Date</label>
-                        <input type="date" name="from_date" id="from_date" value="{{ old('from_date') }}">
+                        <input 
+                            type="date" 
+                            name="from_date" 
+                            id="from_date" 
+                            value="{{ old('from_date') }}"
+                            min="{{ now()->format('Y-m-d') }}" 
+                            max="{{ now()->addMonths(1)->format('Y-m-d') }}">
                         <x-input-error field="from_date" />
                     </div>
     
                     <div class="inputs">
                         <label for="to_date">To Date</label>
-                        <input type="date" name="to_date" id="to_date" value="{{ old('to_date') }}">
+                        <input 
+                            type="date" 
+                            name="to_date" 
+                            id="to_date" 
+                            value="{{ old('to_date') }}" 
+                            min="{{ now()->format('Y-m-d') }}" 
+                            max="{{ now()->addMonths(1)->format('Y-m-d') }}">
                         <x-input-error field="to_date" />
                     </div>
                 </div>

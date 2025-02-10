@@ -14,14 +14,14 @@ class LeaveoutController extends Controller
         $leaveouts = Leaveout::latest()->with('student', 'createdBy')->get();
         $count_leaveouts = count($leaveouts);
 
-        return view('admin.leaveouts.index', compact('leaveouts', 'count_leaveouts'));
+        return view('admin.leaves.leaveouts.index', compact('leaveouts', 'count_leaveouts'));
     }
 
     public function create()
     {
         $students = Student::orderBy('first_name')->get();
 
-        return view('admin.leaveouts.create', compact('students'));
+        return view('admin.leaves.leaveouts.create', compact('students'));
     }
 
     public function store(Request $request)
@@ -45,8 +45,9 @@ class LeaveoutController extends Controller
     public function edit(Leaveout $leaveout)
     {
         $students = Student::orderBy('first_name')->get();
+        $leaveout->load('student');
 
-        return view('admin.leaveouts.edit', compact('students', 'leaveout'));
+        return view('admin.leaves.leaveouts.edit', compact('students', 'leaveout'));
     }
 
     public function update(Request $request, Leaveout $leaveout)
@@ -72,5 +73,12 @@ class LeaveoutController extends Controller
         $leaveout->delete();
 
         return redirect()->route('leaveouts.index')->with('success', 'Leaveout has been deleted.');
+    }
+
+    public function print(Leaveout $leaveout)
+    {
+        $leaveout->load('student');
+
+        return view('admin.leaves.leaveouts.print', compact('leaveout'));
     }
 }
