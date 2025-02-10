@@ -109,6 +109,13 @@
                         border-radius: 50%;
                     }
                 }
+
+                .action_buttons {
+                    display: flex;
+                    gap: 0.8em;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
     }

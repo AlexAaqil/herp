@@ -487,6 +487,12 @@ footer .copyright {
   height: 30px;
   border-radius: 50%;
 }
+.table table tbody tr .action_buttons {
+  display: flex;
+  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (width >= 726px) {
   .table .header {

@@ -15,6 +15,7 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\TeacherSubjectClassroomController;
 use App\Http\Controllers\GuardianStudentController;
 use App\Http\Controllers\DisciplinaryController;
+use App\Http\Controllers\LeaveoutController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -31,6 +32,8 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('disciplinaries', DisciplinaryController::class)->except('show');
+
+    Route::resource('leaveouts', LeaveoutController::class)->except('show');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');
