@@ -44,7 +44,7 @@
     }
 }
 
-@media screen and (width >= 726px) {
+@media screen and (max-width: 726px) {
     .Dashboard {
         .stats {
             grid-template-columns: repeat(5, 1fr);

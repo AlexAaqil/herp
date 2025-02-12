@@ -121,7 +121,7 @@
     }
 }
 
-@media screen and (width >= 726px) {
+@media screen and (max-width: 726px) {
     .table {
         .header {
             grid-template-columns: 1fr 1fr 1fr;

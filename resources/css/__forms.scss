@@ -197,7 +197,7 @@ form {
     }
 }
 
-@media screen and (width >= 726px) {
+@media screen and (max-width: 726px) {
     form {
         .input_group,
         .input_group_3 {
