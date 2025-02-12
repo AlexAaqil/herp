@@ -27,7 +27,7 @@
     </div>
 
     <div class="section messages">
-        <p class="title">{{ $count_unread_messages }} Unread Messages</p>
+        <p class="title">{{ $count_unread_messages }} {{ Str::plural('Unread Message', $count_unread_messages) }}</p>
         @foreach($unread_messages as $message)
             <div class="message">
                 <p class="stack">
