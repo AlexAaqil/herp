@@ -17,3 +17,13 @@ button {
 .btn_danger {
     background: $danger;
 }
+
+.btn_info {
+    background: $warning;
+}
+
+.btn_link {
+    a {
+        color: $elements_color;
+    }
+}

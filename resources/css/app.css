@@ -47,8 +47,6 @@ body {
 }
 
 img {
-  height: 100%;
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -880,6 +878,14 @@ button:hover {
   background: #ff0000;
 }
 
+.btn_info {
+  background: #c28005;
+}
+
+.btn_link a {
+  color: #fff;
+}
+
 .ContactPage .container {
   display: -ms-grid;
   display: grid;
@@ -1004,6 +1010,70 @@ button:hover {
   padding: 4px 16px;
   min-height: 100dvh;
   height: auto;
+}
+
+.MainApp .app_content .container {
+  padding: 10px 16px;
+}
+
+.PrintLeaveout .PrintableArea {
+  height: 100dvh;
+}
+
+.PrintLeaveout .PrintableArea .header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 180px 1fr;
+      grid-template-columns: 180px 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.PrintLeaveout .PrintableArea .header .text .title {
+  font-size: 1.6em;
+  margin: 0 0 0.2em;
+}
+
+.PrintLeaveout .PrintableArea .header .text p:last-of-type {
+  font-size: 1.2em;
+}
+
+.PrintLeaveout .PrintableArea .body {
+  margin: 0.4em 0;
+  position: relative;
+}
+
+.PrintLeaveout .PrintableArea .body .student_details p {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px 1fr;
+      grid-template-columns: 100px 1fr;
+}
+
+.PrintLeaveout .PrintableArea .body .student_details p span:first-of-type {
+  color: #575757;
+}
+
+.PrintLeaveout .PrintableArea .body .content {
+  margin: 2em 0 0;
+}
+
+.PrintLeaveout .PrintableArea .body .content p {
+  margin: 0 0 0.4em;
+}
+
+.PrintLeaveout .PrintableArea .body .image {
+  position: absolute;
+  margin-top: 0.8em;
+  right: 30%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.PrintLeaveout .PrintableArea .body button {
+  margin: 2em 0;
 }
 
 @media screen and (min-width: 1024px) {

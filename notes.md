@@ -1,6 +1,7 @@
 # TODOs:
 App
 - Implement pagination.
+- Add settings here the stamp image logo and other common details can be customized.
 
 Classrooms
 - Add searchable select for teachers.

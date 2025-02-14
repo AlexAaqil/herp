@@ -4,6 +4,70 @@
         padding: 4px 16px;
         min-height: 100dvh;
         height: auto;
+
+        .container {
+            padding: 10px 16px;
+        }
+    }
+}
+
+.PrintLeaveout {
+    .PrintableArea {
+        height: 100dvh;
+
+        .header {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            align-items: center;
+            gap: 1em;
+
+            .text {
+                .title {
+                    font-size: 1.6em;
+                    margin: 0 0 0.2em;
+                }
+
+                p:last-of-type {
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        .body {
+            margin: 0.4em 0;
+            position:relative;
+
+            .student_details {
+                p {
+                    display: grid;
+                    grid-template-columns: 100px 1fr;
+                    span {
+                        &:first-of-type {
+                            color: $faded_text;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                margin: 2em 0 0;
+
+                p {
+                    margin: 0 0 0.4em;
+                }
+            }
+
+            .image {
+                position: absolute;
+                margin-top: 0.8em;
+                right: 30%;
+                transform: rotate(-30deg);
+            }
+
+            button {
+                margin: 2em 0;
+            }
+        }
     }
 }
 
