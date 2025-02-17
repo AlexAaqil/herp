@@ -14,9 +14,9 @@ class LeaveController extends Controller
         $user_level = Auth::user()->user_level;
 
         if($user_level != 0 && $user_level != 1) {
-            $leaves = Leave::where('user_id', Auth::id())->latest()->get();
+            $leaves = Leave::where('user_id', Auth::id())->orderByRaw("FIELD(response, 'pending', 'approved', 'rejected')")->latest()->get();
         } else {
-            $leaves = Leave::latest()->with('user')->latest()->get();
+            $leaves = Leave::with('user')->orderByRaw("FIELD(response, 'pending', 'approved', 'rejected')")->latest()->get();
         }
 
         $count_leaves = count($leaves);
