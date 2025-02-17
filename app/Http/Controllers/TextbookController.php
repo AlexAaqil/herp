@@ -32,9 +32,18 @@ class TextbookController extends Controller
             'book_name' => 'required|string|max:180',
             'book_number' => 'required|string|max:180',
             'date_issued' => 'nullable|date',
-            'date_returned' => 'nullable|date|after:date_issued',
             'status' => ['required', Rule::in(Textbook::STATUSES)],
             'student_id' => 'required|exists:students,id',
+            'date_returned' => [
+                'nullable',
+                'date',
+                'after:date_issued',
+                function ($attribute, $value, $fail) use ($request) {
+                    if ($request->status !== 'returned' && !is_null($value)) {
+                        $fail('Date returned can only be entered when the status is "returned".');
+                    }
+                },
+            ],
         ]);
 
         Textbook::create($validated_data);
@@ -61,8 +70,17 @@ class TextbookController extends Controller
             'book_number' => 'required|string|max:180',
             'status' => ['required', Rule::in(Textbook::STATUSES)],
             'date_issued' => 'nullable|date',
-            'date_returned' => 'nullable|date|after:date_issued',
             'student_id' => 'required|exists:students,id',
+            'date_returned' => [
+                'nullable',
+                'date',
+                'after:date_issued',
+                function ($attribute, $value, $fail) use ($request) {
+                    if ($request->status !== 'returned' && !is_null($value)) {
+                        $fail('Date returned can only be entered when the status is "returned".');
+                    }
+                },
+            ],
         ]);
 
         $textbook->update($validated_data);
