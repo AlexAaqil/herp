@@ -675,7 +675,7 @@ form select::placeholder {
 }
 
 form .inputs {
-  margin: 0 0 0.8em;
+  margin: 0 0 1em;
 }
 
 form input[type=file] {
@@ -797,7 +797,7 @@ form input[type=file] {
       -ms-flex-align: center;
           align-items: center;
   gap: 1em;
-  margin: 0.3em 0 0;
+  margin: 0.1em 0 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -866,7 +866,7 @@ form input[type=file] {
   form .input_group_3 {
     display: -ms-grid;
     display: grid;
-    gap: 0 1em;
+    gap: 2em;
   }
   form .input_group {
     -ms-grid-columns: 1fr 1fr;

@@ -33,7 +33,7 @@ form {
     }
 
     .inputs {
-        margin: 0 0 0.8em;
+        margin: 0 0 1em;
     }
 
     input[type=file] {
@@ -146,7 +146,7 @@ form {
             display: flex;
             align-items: center;
             gap: 1em;
-            margin: 0.3em 0 0;
+            margin: 0.1em 0 0;
             flex-wrap:wrap;
     
             label {
@@ -218,7 +218,7 @@ form {
         .input_group,
         .input_group_3 {
             display: grid;
-            gap: 0 1em;
+            gap: 2em;
         }
 
         .input_group {

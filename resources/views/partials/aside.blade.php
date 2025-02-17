@@ -104,12 +104,12 @@
             //     'text' => 'Assignments',
             //     'level' => ['super admin', 'admin', 'teacher'],
             // ],
-            // [
-            //     'route' => 'textbooks.index',
-            //     'icon' => 'fas fa-book',
-            //     'text' => 'Textbooks',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'textbooks.index',
+                'icon' => 'fas fa-book',
+                'text' => 'Textbooks',
+                'level' => ['super admin', 'admin', 'teacher'],
+            ],
             [
                 'route' => 'classrooms.index',
                 'icon' => 'fas fa-chalkboard',
