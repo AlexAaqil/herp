@@ -203,41 +203,23 @@ textbooks {
     $table->string('book_number');
     $table->date('date_issued')->nullable();
     $table->date('date_returned')->nullable();
-    $table->enum('status', ['issued', 'returned', 'lost'])->default('issued');
+    $table->string('status')->default('issued');
 
-    $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+    $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
     $table->foreignId('issued_by')->nullable()->constrained('users')->onDelete('set null');
     $table->foreignId('received_by')->nullable()->constrained('users')->onDelete('set null');
     $table->timestamps();
 }
 
-payments {
-    $table->string('name', 100);
-    $table->decimal('amount', 10, 2);
-    $table->unsignedSmallInteger('year');
-    $table->unsignedTinyInteger('term');
+assignments {
+    $table->date('date_issued');
+    $table->date('deadline');
+    $table->text('description');
+    $table->string('assignment_path');
 
-    $table->foreignId('classroom_category_id')->constrained('classroom_categories')->onDelete('cascade');
-    $table->timestamps();
-}
-
-payment_records {
-    $table->string('reference_number', 100)->unique()->nullable();
-    $table->string('payment_method')->default('cheque');
-    $table->decimal('amount_paid', 10, 2)->nullable();
-    $table->decimal('balance', 10, 2)->nullable();
-
-    $table->foreignId('payment_id')->constrained('payments')->cascadeOnDelete();
-    $table->foreignId('student_id')->nullable()->constrained('students')->onDelete('set null');
-    $table->timestamps();
-}
-
-payment_receipts {
-    $table->decimal('amount_paid', 10, 2);
-    $table->decimal('balance', 10, 2);
-    $table->date('date_paid');
-
-    $table->foreignId('payment_record_id')->constrained('payment_records')->onDelete('cascade');
+    $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
+    $table->foreignId('class_section_id')->constrained('class_sections')->cascadeOnDelete();
+    $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
     $table->timestamps();
 }
 
@@ -279,24 +261,42 @@ inventory_records {
     $table->timestamps();
 }
 
+payments {
+    $table->string('name', 100);
+    $table->decimal('amount', 10, 2);
+    $table->unsignedSmallInteger('year');
+    $table->unsignedTinyInteger('term');
+
+    $table->foreignId('classroom_category_id')->constrained('classroom_categories')->onDelete('cascade');
+    $table->timestamps();
+}
+
+payment_records {
+    $table->string('reference_number', 100)->unique()->nullable();
+    $table->string('payment_method')->default('cheque');
+    $table->decimal('amount_paid', 10, 2)->nullable();
+    $table->decimal('balance', 10, 2)->nullable();
+
+    $table->foreignId('payment_id')->constrained('payments')->cascadeOnDelete();
+    $table->foreignId('student_id')->nullable()->constrained('students')->onDelete('set null');
+    $table->timestamps();
+}
+
+payment_receipts {
+    $table->decimal('amount_paid', 10, 2);
+    $table->decimal('balance', 10, 2);
+    $table->date('date_paid');
+
+    $table->foreignId('payment_record_id')->constrained('payment_records')->onDelete('cascade');
+    $table->timestamps();
+}
+
 expenses {
     $table->string('category')->index();
     $table->string('recepient', 255);
     $table->decimal('amount_paid', 10, 2);
     $table->date('date')->index();
     $table->string('description', 255)->nullable();
-    $table->timestamps();
-}
-
-assignments {
-    $table->date('date_issued');
-    $table->date('deadline');
-    $table->text('description');
-    $table->string('assignment_path');
-
-    $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
-    $table->foreignId('class_section_id')->constrained('class_sections')->cascadeOnDelete();
-    $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
     $table->timestamps();
 }
 
@@ -348,7 +348,7 @@ const LEAVESCATEGORIES = [
 ];
 
 // Textbooks
-const TEXTBOOKSTATUS = [
+const STATUSES = [
     'issued',
     'returned',
     'lost',
