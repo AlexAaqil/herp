@@ -36,7 +36,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('view-as-user', function (User $user) {
-            return $user->user_level_label === 'user';
+            return !in_array($user->user_level_label, ['admin', 'super admin']);
         });
 
         Gate::define('update-user', function (User $currentUser, User $targetUser) {

@@ -17,9 +17,26 @@ class Leave extends Model
     ];
 
     const CATEGORIES = [
+        'casual',
         'emergency',
         'maternal',
         'sick',
         'study',
     ];
+
+    const RESPONSES = [
+        'pending',
+        'approved',
+        'rejected',
+    ];
+
+    protected $casts = [
+        'from_date' => 'datetime',
+        'to_date' => 'datetime',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

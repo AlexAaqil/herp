@@ -6,7 +6,7 @@
     <section class="Disciplinaries">
         <div class="body">
             @if ($disciplinaries->isNotEmpty())
-                <div class="table">
+                <div class="table list_items">
                     <div class="header">
                         <div class="details">
                             <p class="title">Disciplinaries</p>

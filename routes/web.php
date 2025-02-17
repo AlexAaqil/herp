@@ -16,6 +16,7 @@ use App\Http\Controllers\TeacherSubjectClassroomController;
 use App\Http\Controllers\GuardianStudentController;
 use App\Http\Controllers\DisciplinaryController;
 use App\Http\Controllers\LeaveoutController;
+use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\MessageController;
 
 Route::view('/', 'index')->name('home-page');
@@ -35,6 +36,8 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
 
     Route::resource('leaveouts', LeaveoutController::class)->except('show');
     Route::get('/leaveouts/{leaveout}/print', [LeaveoutController::class, 'print'])->name('leaveouts.print');
+
+    Route::resource('leaves', LeaveController::class)->parameters(['leaves' => 'leave'])->except('show');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

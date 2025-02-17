@@ -6,7 +6,7 @@
     <section class="Subjects">
         <div class="body">
             @if ($subjects->isNotEmpty())
-                <div class="table">
+                <div class="table list_items">
                     <div class="header">
                         <div class="details">
                             <p class="title">Subjects</p>

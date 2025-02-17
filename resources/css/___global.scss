@@ -37,3 +37,11 @@ ol {
 .title {
     font-weight: bold;
 }
+
+.fa-check-circle {
+    color: $success;
+}
+
+.fa-times-circle {
+    color: $danger;
+}

@@ -126,6 +126,22 @@ form {
             }
         }
 
+        .form_details {
+            margin: 0 0 2em;
+
+            p,
+            div {
+                display: flex;
+                margin: 0 0 0.8em;
+            }
+
+            p span:first-of-type,
+            div p:first-of-type {
+                color: $faded_text;
+                width: 150px;
+            }
+        }
+
         .custom_radio_buttons {
             display: flex;
             align-items: center;

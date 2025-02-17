@@ -8,6 +8,44 @@
         .container {
             padding: 10px 16px;
         }
+
+        .list_items {
+            .items {
+                display: grid;
+                gap: 1em;
+
+                .item {
+                    background: $list_items_background;
+                    border-radius: 8px;
+                    padding: 12px;
+
+                    .item_header {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 0 0 0.8em;
+
+                        .details {
+                            span {
+                                &:first-of-type {
+                                    font-weight: bold;
+                                    margin: 0 0.4em 0 0;
+
+                                    &:after {
+                                        content: " .";
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .content {
+                        p {
+                            margin: 0 0 0.4em;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -75,6 +113,12 @@
     .MainApp {
         aside {
             width: $aside_width;
+        }
+
+        .list_items {
+            .items {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
     }
 }

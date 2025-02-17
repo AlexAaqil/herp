@@ -6,7 +6,7 @@
     <section class="Classrooms">
         <div class="body">
             @if ($grouped_classrooms->isNotEmpty())
-                <div class="table">
+                <div class="table list_items">
                     <div class="header">
                         <div class="details">
                             <p class="title">Classrooms</p>

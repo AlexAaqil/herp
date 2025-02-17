@@ -74,12 +74,12 @@
                 'text' => 'Leaveouts',
                 'level' => ['super admin', 'admin', 'teacher'],
             ],
-            // [
-            //     'route' => 'leaves.index',
-            //     'icon' => 'fas fa-calendar-week',
-            //     'text' => 'Leaves',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'leaves.index',
+                'icon' => 'fas fa-calendar-week',
+                'text' => 'Leaves',
+                'level' => ['super admin', 'admin', 'teacher'],
+            ],
             // [
             //     'route' => 'announcements.index',
             //     'icon' => 'fas fa-bell',

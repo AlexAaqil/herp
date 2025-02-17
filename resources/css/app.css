@@ -69,6 +69,14 @@ ol {
   font-weight: bold;
 }
 
+.fa-check-circle {
+  color: #008000;
+}
+
+.fa-times-circle {
+  color: #ff0000;
+}
+
 nav {
   height: 10vh;
   padding: 15px 5%;
@@ -763,6 +771,24 @@ form input[type=file] {
   cursor: grab;
 }
 
+.custom_form form .form_details {
+  margin: 0 0 2em;
+}
+
+.custom_form form .form_details p,
+.custom_form form .form_details div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 0.8em;
+}
+
+.custom_form form .form_details p span:first-of-type,
+.custom_form form .form_details div p:first-of-type {
+  color: #575757;
+  width: 150px;
+}
+
 .custom_form form .custom_radio_buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1016,6 +1042,41 @@ button:hover {
   padding: 10px 16px;
 }
 
+.MainApp .app_content .list_items .items {
+  display: -ms-grid;
+  display: grid;
+  gap: 1em;
+}
+
+.MainApp .app_content .list_items .items .item {
+  background: #ffeedb;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.MainApp .app_content .list_items .items .item .item_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0 0.8em;
+}
+
+.MainApp .app_content .list_items .items .item .item_header .details span:first-of-type {
+  font-weight: bold;
+  margin: 0 0.4em 0 0;
+}
+
+.MainApp .app_content .list_items .items .item .item_header .details span:first-of-type:after {
+  content: " .";
+}
+
+.MainApp .app_content .list_items .items .item .content p {
+  margin: 0 0 0.4em;
+}
+
 .PrintLeaveout .PrintableArea {
   height: 100dvh;
 }
@@ -1079,6 +1140,10 @@ button:hover {
 @media screen and (min-width: 1024px) {
   .MainApp aside {
     width: 15%;
+  }
+  .MainApp .list_items .items {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
