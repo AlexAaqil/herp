@@ -215,10 +215,10 @@ assignments {
     $table->date('date_issued');
     $table->date('deadline');
     $table->text('description');
-    $table->string('assignment_path');
+    $table->string('uploaded_file');
 
     $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
-    $table->foreignId('class_section_id')->constrained('class_sections')->cascadeOnDelete();
+    $table->foreignId('classroom_id')->constrained('class_sections')->cascadeOnDelete();
     $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
     $table->timestamps();
 }
