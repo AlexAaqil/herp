@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Users\ProfileController;
 use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Users\TeacherController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\Users\GuardianController;
 use App\Http\Controllers\Users\StudentController;
 use App\Http\Controllers\Classrooms\ClassroomCategoryController;
@@ -18,7 +19,7 @@ use App\Http\Controllers\DisciplinaryController;
 use App\Http\Controllers\LeaveoutController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\TextbookController;
-use App\Http\Controllers\MessageController;
+use App\Http\Controllers\AssignmentController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');
@@ -41,6 +42,9 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::resource('leaves', LeaveController::class)->parameters(['leaves' => 'leave'])->except('show');
 
     Route::resource('textbooks', TextbookController::class)->except('show');
+
+    Route::resource('assignments', AssignmentController::class)->except('show');
+    Route::get('assignments/{assignment}/download', [AssignmentController::class, 'download'])->name('assignments.download');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

@@ -98,12 +98,12 @@
             //     'text' => 'Exams',
             //     'level' => ['super admin', 'admin', 'teacher'],
             // ],
-            // [
-            //     'route' => 'assignments.index',
-            //     'icon' => 'fas fa-brain',
-            //     'text' => 'Assignments',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'assignments.index',
+                'icon' => 'fas fa-brain',
+                'text' => 'Assignments',
+                'level' => ['super admin', 'admin', 'teacher'],
+            ],
             [
                 'route' => 'textbooks.index',
                 'icon' => 'fas fa-book',
