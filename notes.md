@@ -232,32 +232,11 @@ exams {
 exam_records {
     $table->unsignedTinyInteger('marks');
     $table->char('grade', 2)->nullable();
+    $table->string('classroom');
 
     $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
     $table->foreignId('exam_id')->constrained('exams')->onDelete('cascade');
     $table->foreignId('subject_id')->constrained('subjects')->onDelete('cascade');
-    $table->timestamps();
-}
-
-inventory_categories {
-    $table->string('name')->unique();
-}
-
-inventory_items {
-    $table->string('name')->unique();
-    $table->string('unit');
-
-    $table->foreignId('category_id')->constrained('inventory_categories')->cascadeOnDelete();
-}
-
-inventory_records {
-    $table->string('type');
-    $table->unsignedSmallInteger('quantity');
-    $table->unsignedSmallInteger('remaining')->nullable();
-    $table->string('description')->nullable();
-    $table->date('date');
-
-    $table->foreignId('item_id')->constrained('inventory_items')->cascadeOnDelete();
     $table->timestamps();
 }
 
@@ -291,9 +270,31 @@ payment_receipts {
     $table->timestamps();
 }
 
+inventory_categories {
+    $table->string('name')->unique();
+}
+
+inventory_items {
+    $table->string('name')->unique();
+    $table->string('unit');
+
+    $table->foreignId('category_id')->constrained('inventory_categories')->cascadeOnDelete();
+}
+
+inventory_records {
+    $table->string('type');
+    $table->unsignedSmallInteger('quantity');
+    $table->unsignedSmallInteger('remaining')->nullable();
+    $table->string('description')->nullable();
+    $table->date('date');
+
+    $table->foreignId('item_id')->constrained('inventory_items')->cascadeOnDelete();
+    $table->timestamps();
+}
+
 expenses {
     $table->string('category')->index();
-    $table->string('recepient', 255);
+    $table->string('recipient', 255);
     $table->decimal('amount_paid', 10, 2);
     $table->date('date')->index();
     $table->string('description', 255)->nullable();
