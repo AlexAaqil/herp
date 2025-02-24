@@ -46,6 +46,43 @@
                 }
             }
         }
+
+        .system_nav {
+            display: flex;
+            gap: 1em;
+            margin: 0.2em 0 0.4em;
+            
+            a {
+                font-weight: bold;
+            }
+
+            a:not(:last-child),
+            span:not(:last-child) {
+                font-weight: bold;
+
+                &::after {
+                    content: " / ";
+                    color: $text_color;
+                    margin: 0 0 0 0.6em;
+                }
+            }
+        }
+    }
+}
+
+.Exams {
+    table {
+        margin: 0 0 1em;
+
+        input[type="number"] {
+            width: 50%;
+        }
+
+    }
+
+    p.title {
+        color: $link_color;
+        font-size: 1.12em;
     }
 }
 

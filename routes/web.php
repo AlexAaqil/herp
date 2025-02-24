@@ -20,6 +20,8 @@ use App\Http\Controllers\LeaveoutController;
 use App\Http\Controllers\LeaveController;
 use App\Http\Controllers\TextbookController;
 use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\ExamController;
+use App\Http\Controllers\ExamRecordController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');
@@ -45,6 +47,9 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
 
     Route::resource('assignments', AssignmentController::class)->except('show');
     Route::get('assignments/{assignment}/download', [AssignmentController::class, 'download'])->name('assignments.download');
+
+    Route::resource('exams', ExamController::class)->except('show');
+    Route::resource('exam-records', ExamRecordController::class)->except('show');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

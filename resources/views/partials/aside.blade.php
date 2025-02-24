@@ -92,12 +92,12 @@
                 'text' => 'Disciplinaries',
                 'level' => ['super admin', 'admin', 'teacher'],
             ],
-            // [
-            //     'route' => 'exams.index',
-            //     'icon' => 'fas fa-user-graduate',
-            //     'text' => 'Exams',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'exams.index',
+                'icon' => 'fas fa-user-graduate',
+                'text' => 'Exams',
+                'level' => ['super admin', 'admin', 'teacher'],
+            ],
             [
                 'route' => 'assignments.index',
                 'icon' => 'fas fa-brain',

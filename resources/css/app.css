@@ -1077,6 +1077,43 @@ button:hover {
   margin: 0 0 0.4em;
 }
 
+.MainApp .app_content .system_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  margin: 0.2em 0 0.4em;
+}
+
+.MainApp .app_content .system_nav a {
+  font-weight: bold;
+}
+
+.MainApp .app_content .system_nav a:not(:last-child),
+.MainApp .app_content .system_nav span:not(:last-child) {
+  font-weight: bold;
+}
+
+.MainApp .app_content .system_nav a:not(:last-child)::after,
+.MainApp .app_content .system_nav span:not(:last-child)::after {
+  content: " / ";
+  color: #000;
+  margin: 0 0 0 0.6em;
+}
+
+.Exams table {
+  margin: 0 0 1em;
+}
+
+.Exams table input[type="number"] {
+  width: 50%;
+}
+
+.Exams p.title {
+  color: blue;
+  font-size: 1.12em;
+}
+
 .PrintLeaveout .PrintableArea {
   height: 100dvh;
 }
