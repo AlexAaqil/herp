@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class SuperAdmin
 {
@@ -15,7 +16,7 @@ class SuperAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth()->user();
+        $user = Auth::user();
         $user_level = $user->user_level;
 
         if($user && $user_level == 1) {
