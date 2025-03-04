@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="image">
-                    <img src="{{ Vite::asset('resources/images/stamp.png') }}" alt="School Stamp" width="180px" height="180px">
+                    <x-leaveout-stamp />
                 </div>
 
                 <div class="no_print">

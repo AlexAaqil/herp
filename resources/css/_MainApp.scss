@@ -86,6 +86,100 @@
     }
 }
 
+
+.PrintReceipt {
+    aside {
+        display: none !important;
+        width: 0;
+    }
+
+    .app_content {
+        margin-left: 0;
+    }
+}
+
+.Payments {
+    .table {
+        td {
+            padding: 8px 4px;
+        }
+        
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 1em;
+            align-items: center;
+            align-content: flex-start;
+
+            .inputs {
+                margin: 0;
+            }
+
+            button {
+                background: $elements_background;
+                color: $elements_color;
+                font-weight: bold;
+                padding: 6px 12px;
+            }
+        }
+    }
+
+    .fees_receipt {
+        position: relative;
+
+        .receipt_header {
+            display: flex;
+            justify-content: space-between;
+
+            .title {
+                font-size: 2.8em;
+            }
+
+            .details {
+                p {
+                    &:first-of-type {
+                        font-weight: bold;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+
+        .receipt_body {
+            margin: 1em 0;
+
+            p {
+                span {
+                    &:last-of-type {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .payment_details {
+            margin: 2em 0;
+            
+            p {
+                font-size: 1.2em;
+            }
+        }
+
+        .image {
+            position: absolute;
+            right: 20px;
+            bottom: -1.5em;
+            transform: rotate(-25deg);
+
+            img {
+                object-fit: contain;
+                width: 220px;
+                height: 220px;
+            }
+        }
+    }
+}
+
 .PrintLeaveout {
     .PrintableArea {
         height: 100dvh;

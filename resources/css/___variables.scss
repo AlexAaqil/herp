@@ -28,6 +28,10 @@ $elements_background: #000;
 $elements_color: #fff;
 
 
+$disabled_element_background: grey !important;
+$disabled_element_color: $text_color !important;
+
+
 $list_items_background: #ffeedb;
 $list_items_color: $text_color;
 
@@ -48,6 +52,14 @@ $light_link_color: lightblue;
 }
 
 .unverified {
+    color: $danger;
+}
+
+.success {
+    color: $success;
+}
+
+.danger {
     color: $danger;
 }
 

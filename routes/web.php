@@ -22,6 +22,9 @@ use App\Http\Controllers\TextbookController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ExamRecordController;
+use App\Http\Controllers\Payments\PaymentController;
+use App\Http\Controllers\Payments\PaymentRecordController;
+use App\Http\Controllers\Payments\PaymentReceiptController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');
@@ -50,6 +53,14 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
 
     Route::resource('exams', ExamController::class)->except('show');
     Route::resource('exam-records', ExamRecordController::class)->except('show');
+
+    Route::resource('payments', PaymentController::class)->except('show');
+
+    Route::resource('payment-records', PaymentRecordController::class)->only(['index', 'store', 'destroy']);
+    Route::get('/payment-records/create/{student_id}', [PaymentRecordController::class, 'create'])->name('payment-records.create');
+
+    Route::get('/payment-receipts/generate-receipt/{student_id}', [PaymentReceiptController::class, 'generateReceipt'])->name('payment-records.generate_receipt');
+    Route::post('/payment-receipts/print-receipt/{student_id}', [PaymentReceiptController::class, 'printReceipt'])->name('payment-records.print_receipt');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

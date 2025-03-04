@@ -8,6 +8,14 @@
   color: #ff0000;
 }
 
+.success {
+  color: #008000;
+}
+
+.danger {
+  color: #ff0000;
+}
+
 .badge {
   font-size: 0.65em;
   background: #54b7b1;
@@ -900,6 +908,12 @@ button:hover {
   transition: 0.2s ease-in-out;
 }
 
+button:disabled {
+  background: grey !important;
+  color: #000 !important;
+  cursor: not-allowed;
+}
+
 .btn_danger {
   background: #ff0000;
 }
@@ -1112,6 +1126,96 @@ button:hover {
 .Exams p.title {
   color: blue;
   font-size: 1.12em;
+}
+
+.PrintReceipt aside {
+  display: none !important;
+  width: 0;
+}
+
+.PrintReceipt .app_content {
+  margin-left: 0;
+}
+
+.Payments .table td {
+  padding: 8px 4px;
+}
+
+.Payments .table form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr auto;
+      grid-template-columns: 1fr 1fr auto;
+  gap: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.Payments .table form .inputs {
+  margin: 0;
+}
+
+.Payments .table form button {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 12px;
+}
+
+.Payments .fees_receipt {
+  position: relative;
+}
+
+.Payments .fees_receipt .receipt_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Payments .fees_receipt .receipt_header .title {
+  font-size: 2.8em;
+}
+
+.Payments .fees_receipt .receipt_header .details p:first-of-type {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.Payments .fees_receipt .receipt_body {
+  margin: 1em 0;
+}
+
+.Payments .fees_receipt .receipt_body p span:last-of-type {
+  font-weight: bold;
+}
+
+.Payments .fees_receipt .payment_details {
+  margin: 2em 0;
+}
+
+.Payments .fees_receipt .payment_details p {
+  font-size: 1.2em;
+}
+
+.Payments .fees_receipt .image {
+  position: absolute;
+  right: 20px;
+  bottom: -1.5em;
+  -webkit-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.Payments .fees_receipt .image img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 220px;
+  height: 220px;
 }
 
 .PrintLeaveout .PrintableArea {

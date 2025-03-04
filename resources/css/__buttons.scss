@@ -12,6 +12,12 @@ button {
         box-shadow: 2px 2px 4px lighten($elements_background, 50);
         transition: 0.2s ease-in-out;
     }
+
+    &:disabled {
+        background: $disabled_element_background;
+        color: $disabled_element_color;
+        cursor: not-allowed;
+    }
 }
 
 .btn_danger {

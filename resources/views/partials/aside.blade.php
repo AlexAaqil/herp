@@ -50,12 +50,12 @@
                 'text' => 'Students',
                 'level' => ['super admin', 'admin'],
             ],
-            // [
-            //     'route' => 'payments.index',
-            //     'icon' => 'fas fa-money-bill-alt',
-            //     'text' => 'Payments',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'payment-records.index',
+                'icon' => 'fas fa-money-bill-alt',
+                'text' => 'Payments',
+                'level' => ['super admin', 'admin', 'accountant'],
+            ],
             // [
             //     'route' => 'expenses.index',
             //     'icon' => 'fas fa-money-check',
@@ -78,7 +78,7 @@
                 'route' => 'leaves.index',
                 'icon' => 'fas fa-calendar-week',
                 'text' => 'Leaves',
-                'level' => ['super admin', 'admin', 'teacher'],
+                'level' => [],
             ],
             // [
             //     'route' => 'announcements.index',
