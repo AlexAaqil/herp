@@ -3,6 +3,11 @@ App
 - Implement pagination.
 - Add settings here the stamp image logo and other common details can be customized.
 
+Payments
+- Find a way to handle excess payments.
+- Group the Periods in the page for managing payments.
+- Fix the link back to payment records from the generate_receipt page.
+
 Classrooms
 - Add searchable select for teachers.
 
@@ -246,13 +251,11 @@ payments {
     $table->unsignedSmallInteger('year');
     $table->unsignedTinyInteger('term');
 
-    $table->foreignId('classroom_category_id')->constrained('classroom_categories')->onDelete('cascade');
+    $table->foreignId('classroom_category_id')->constrained('classroom_categories')->cascadeOnDelete();
     $table->timestamps();
 }
 
 payment_records {
-    $table->string('reference_number', 100)->unique()->nullable();
-    $table->string('payment_method')->default('cheque');
     $table->decimal('amount_paid', 10, 2)->nullable();
     $table->decimal('balance', 10, 2)->nullable();
 
@@ -263,10 +266,12 @@ payment_records {
 
 payment_receipts {
     $table->decimal('amount_paid', 10, 2);
+    $table->string('payment_method')->default('cheque');
+    $table->string('reference_number', 100)->unique()->nullable();
     $table->decimal('balance', 10, 2);
     $table->date('date_paid');
 
-    $table->foreignId('payment_record_id')->constrained('payment_records')->onDelete('cascade');
+    $table->foreignId('payment_record_id')->constrained('payment_records')->cascadeOnDelete();
     $table->timestamps();
 }
 
