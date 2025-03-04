@@ -6,7 +6,7 @@ App
 Payments
 - Find a way to handle excess payments.
 - Group the Periods in the page for managing payments.
-- Fix the link back to payment records from the generate_receipt page.
+~~- Fix the link back to payment records from the generate_receipt page.~~
 
 Classrooms
 - Add searchable select for teachers.

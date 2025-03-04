@@ -6,7 +6,7 @@
     <section class="Payments">
         <div class="system_nav">
             <a href="{{ route('payments.index') }}">Payments</a>
-            <a href="{{ route('payment-records.index') }}">Payment Records</a>
+            <a href="{{ route('payment-records.create', $student->id) }}">Payment Records</a>
             <span>Print Receipt</span>
         </div>
 
