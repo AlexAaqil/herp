@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Inventory;
 
-use App\Models\InventoryRecord;
-use App\Models\InventoryItem;
+use App\Http\Controllers\Controller;
+use App\Models\Inventory\InventoryRecord;
+use App\Models\Inventory\InventoryItem;
 use Illuminate\Http\Request;
 
 class InventoryRecordController extends Controller

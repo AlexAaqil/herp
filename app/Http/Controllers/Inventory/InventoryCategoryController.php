@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Inventory;
 
-use App\Models\InventoryCategory;
-use App\Models\InventoryItem;
+use App\Http\Controllers\Controller;
+use App\Models\Inventory\InventoryCategory;
+use App\Models\Inventory\InventoryItem;
 use Illuminate\Http\Request;
 
 class InventoryCategoryController extends Controller

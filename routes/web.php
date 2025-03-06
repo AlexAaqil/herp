@@ -25,9 +25,9 @@ use App\Http\Controllers\ExamRecordController;
 use App\Http\Controllers\Payments\PaymentController;
 use App\Http\Controllers\Payments\PaymentRecordController;
 use App\Http\Controllers\Payments\PaymentReceiptController;
-use App\Http\Controllers\InventoryCategoryController;
-use App\Http\Controllers\InventoryItemController;
-use App\Http\Controllers\InventoryRecordController;
+use App\Http\Controllers\Inventory\InventoryCategoryController;
+use App\Http\Controllers\Inventory\InventoryItemController;
+use App\Http\Controllers\Inventory\InventoryRecordController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');

@@ -21,7 +21,7 @@
                     <div class="inputs">
                         <label for="type" class="required">Transaction</label>
                         <div class="custom_radio_buttons">
-                            @foreach(App\Models\InventoryRecord::TYPES as $key => $label)
+                            @foreach(App\Models\Inventory\InventoryRecord::TYPES as $key => $label)
                                 <label>
                                     <input class="option_radio" 
                                         type="radio" 
