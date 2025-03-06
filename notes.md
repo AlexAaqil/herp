@@ -297,12 +297,45 @@ inventory_records {
     $table->timestamps();
 }
 
+expense_categories {
+    $table->string('name')->unique();
+    $table->string('description')->nullable();
+}
+
+expense_recipients {
+    $table->string('name');
+    $table->string('email')->nullable();
+    $table->string('phone_number')->unique();
+    $table->string('company_name')->nullable();
+}
+
 expenses {
-    $table->string('category')->index();
-    $table->string('recipient', 255);
     $table->decimal('amount_paid', 10, 2);
-    $table->date('date')->index();
+    $table->string('payment_method');
+    $table->string('reference_number')->nullable();
+    $table->string('payment_status')->default('paid');
     $table->string('description', 255)->nullable();
+    $table->date('date')->index();
+
+    $table->foreignId('expense_category_id')->nullable()->constrained()->nullOnDelete();
+    $table->foreignId('expense_recipient_id')->nullable()->constrained()->nullOnDelete();
+    $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
+    $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete();
+    $table->timestamps();
+}
+
+salaries {
+    $table->decimal('salary', 10, 2);
+    $table->decimal('amount_paid', 10, 2);
+    $table->string('payment_method');
+    $table->string('reference_number')->nullable();
+    $table->string('payment_status')->default('paid');
+    $table->string('description', 255)->nullable();
+    $table->date('date')->index();
+
+    $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
+    $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
+    $table->foreignId('updated_by')->nullable()->constrained('users')->nullOnDelete();
     $table->timestamps();
 }
 
