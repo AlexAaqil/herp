@@ -25,6 +25,9 @@ use App\Http\Controllers\ExamRecordController;
 use App\Http\Controllers\Payments\PaymentController;
 use App\Http\Controllers\Payments\PaymentRecordController;
 use App\Http\Controllers\Payments\PaymentReceiptController;
+use App\Http\Controllers\InventoryCategoryController;
+use App\Http\Controllers\InventoryItemController;
+use App\Http\Controllers\InventoryRecordController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');
@@ -64,6 +67,12 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
 
     Route::get('/payment-receipts/generate-gatepass/{student_id}', [PaymentReceiptController::class, 'generateGatepass'])->name('payment-records.generate_gatepass');
     Route::post('/payment-receipts/print-gatepass/{student_id}', [PaymentReceiptController::class, 'printGatepass'])->name('payment-records.print_gatepass');
+
+    Route::resource('inventory-categories', InventoryCategoryController::class)->except('create', 'show');
+
+    Route::resource('inventory-items', InventoryItemController::class)->except('index', 'create', 'show');
+
+    Route::resource('inventory-records', InventoryRecordController::class)->except('show');
 
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');

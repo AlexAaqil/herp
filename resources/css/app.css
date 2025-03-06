@@ -54,6 +54,12 @@ body {
   padding: 10px 5%;
 }
 
+.row_container {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+}
+
 img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -73,6 +79,16 @@ ol {
   list-style-position: inside;
 }
 
+ul li,
+ol li {
+  padding: 0.2em 0;
+}
+
+ul ul,
+ol ul {
+  padding: 0 1.8em 0;
+}
+
 .title {
   font-weight: bold;
 }
@@ -83,6 +99,13 @@ ol {
 
 .fa-times-circle {
   color: #ff0000;
+}
+
+@media screen and (min-width: 1024px) {
+  .row_container {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
 }
 
 nav {

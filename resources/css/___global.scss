@@ -14,6 +14,11 @@ body {
     padding: 10px 5%;
 }
 
+.row_container {
+    display: grid;
+    gap: 2em;
+}
+
 img {
     // height: 100%;
     // width: 100%;
@@ -32,6 +37,14 @@ a {
 ul,
 ol {
     list-style-position: inside;
+
+    li {
+        padding: 0.2em 0;
+    }
+
+    ul {
+        padding: 0 1.8em 0;
+    }
 }
 
 .title {
@@ -44,4 +57,10 @@ ol {
 
 .fa-times-circle {
     color: $danger;
+}
+
+@media screen and (min-width: 1024px) {
+    .row_container {
+        grid-template-columns: 2fr 1fr;
+    }
 }

@@ -62,12 +62,12 @@
             //     'text' => 'Expenses',
             //     'level' => ['super admin', 'admin', 'teacher'],
             // ],
-            // [
-            //     'route' => 'inventory.index',
-            //     'icon' => 'fas fa-barcode',
-            //     'text' => 'Inventory',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'inventory-categories.index',
+                'icon' => 'fas fa-barcode',
+                'text' => 'Inventory',
+                'level' => ['super admin', 'admin', 'store keeper'],
+            ],
             [
                 'route' => 'leaveouts.index',
                 'icon' => 'fas fa-calendar-minus',
