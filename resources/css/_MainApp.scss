@@ -130,6 +130,8 @@
         .receipt_header {
             display: flex;
             justify-content: space-between;
+            padding: 10px 0 1.5em;
+            border-bottom: 2px solid grey;
 
             .title {
                 font-size: 2.8em;
@@ -146,7 +148,7 @@
         }
 
         .receipt_body {
-            margin: 1em 0;
+            margin: 1.5em 0;
 
             p {
                 span {
@@ -154,6 +156,18 @@
                         font-weight: bold;
                     }
                 }
+            }
+        }
+
+        .gatepass_body {
+            form {
+                button {
+                    margin: 1em 0;
+                }
+            }
+
+            p {
+                margin: 1.2em 0;
             }
         }
 

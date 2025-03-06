@@ -7,7 +7,8 @@
         <div class="system_nav">
             <a href="{{ route('payments.index') }}">Payments</a>
             <a href="{{ route('payment-records.create', $student->id) }}">Payment Records</a>
-            <span>Print Receipt</span>
+            <a href="{{ route('payment-records.generate_gatepass', $student->id) }}">Gatepass</a>
+            <span>Fees Receipt</span>
         </div>
 
         <div class="title">

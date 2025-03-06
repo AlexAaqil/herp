@@ -62,6 +62,9 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::get('/payment-receipts/generate-receipt/{student_id}', [PaymentReceiptController::class, 'generateReceipt'])->name('payment-records.generate_receipt');
     Route::post('/payment-receipts/print-receipt/{student_id}', [PaymentReceiptController::class, 'printReceipt'])->name('payment-records.print_receipt');
 
+    Route::get('/payment-receipts/generate-gatepass/{student_id}', [PaymentReceiptController::class, 'generateGatepass'])->name('payment-records.generate_gatepass');
+    Route::post('/payment-receipts/print-gatepass/{student_id}', [PaymentReceiptController::class, 'printGatepass'])->name('payment-records.print_gatepass');
+
     Route::middleware(['admin'])->group(function() {
         Route::resource('users', UserController::class)->except('show');
         Route::resource('teachers', TeacherController::class)->only('index', 'edit', 'update');

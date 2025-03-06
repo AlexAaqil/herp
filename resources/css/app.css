@@ -1176,6 +1176,8 @@ button:disabled {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 10px 0 1.5em;
+  border-bottom: 2px solid grey;
 }
 
 .Payments .fees_receipt .receipt_header .title {
@@ -1188,11 +1190,19 @@ button:disabled {
 }
 
 .Payments .fees_receipt .receipt_body {
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 .Payments .fees_receipt .receipt_body p span:last-of-type {
   font-weight: bold;
+}
+
+.Payments .fees_receipt .gatepass_body form button {
+  margin: 1em 0;
+}
+
+.Payments .fees_receipt .gatepass_body p {
+  margin: 1.2em 0;
 }
 
 .Payments .fees_receipt .payment_details {
