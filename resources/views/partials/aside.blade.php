@@ -56,12 +56,12 @@
                 'text' => 'Payments',
                 'level' => ['super admin', 'admin', 'accountant'],
             ],
-            // [
-            //     'route' => 'expenses.index',
-            //     'icon' => 'fas fa-money-check',
-            //     'text' => 'Expenses',
-            //     'level' => ['super admin', 'admin', 'teacher'],
-            // ],
+            [
+                'route' => 'expenses.index',
+                'icon' => 'fas fa-money-check',
+                'text' => 'Expenses',
+                'level' => ['super admin', 'admin', 'accountant'],
+            ],
             [
                 'route' => 'inventory-categories.index',
                 'icon' => 'fas fa-barcode',

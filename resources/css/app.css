@@ -687,22 +687,22 @@ form textarea {
 
 form input::-webkit-input-placeholder,
 form select::-webkit-input-placeholder {
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 form input:-ms-input-placeholder,
 form select:-ms-input-placeholder {
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 form input::-ms-input-placeholder,
 form select::-ms-input-placeholder {
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 form input::placeholder,
 form select::placeholder {
-  opacity: 0.8;
+  opacity: 0.4;
 }
 
 form .inputs {

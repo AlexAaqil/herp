@@ -25,6 +25,9 @@ use App\Http\Controllers\ExamRecordController;
 use App\Http\Controllers\Payments\PaymentController;
 use App\Http\Controllers\Payments\PaymentRecordController;
 use App\Http\Controllers\Payments\PaymentReceiptController;
+use App\Http\Controllers\Payments\ExpenseCategoryController;
+use App\Http\Controllers\Payments\ExpenseRecipientController;
+use App\Http\Controllers\Payments\ExpenseController;
 use App\Http\Controllers\Inventory\InventoryCategoryController;
 use App\Http\Controllers\Inventory\InventoryItemController;
 use App\Http\Controllers\Inventory\InventoryRecordController;
@@ -58,20 +61,19 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
     Route::resource('exam-records', ExamRecordController::class)->except('show');
 
     Route::resource('payments', PaymentController::class)->except('show');
-
     Route::resource('payment-records', PaymentRecordController::class)->only(['index', 'store', 'destroy']);
     Route::get('/payment-records/create/{student_id}', [PaymentRecordController::class, 'create'])->name('payment-records.create');
-
     Route::get('/payment-receipts/generate-receipt/{student_id}', [PaymentReceiptController::class, 'generateReceipt'])->name('payment-records.generate_receipt');
     Route::post('/payment-receipts/print-receipt/{student_id}', [PaymentReceiptController::class, 'printReceipt'])->name('payment-records.print_receipt');
-
     Route::get('/payment-receipts/generate-gatepass/{student_id}', [PaymentReceiptController::class, 'generateGatepass'])->name('payment-records.generate_gatepass');
     Route::post('/payment-receipts/print-gatepass/{student_id}', [PaymentReceiptController::class, 'printGatepass'])->name('payment-records.print_gatepass');
 
+    Route::resource('expense-categories', ExpenseCategoryController::class)->except('create', 'show');
+    Route::resource('expense-recipients', ExpenseRecipientController::class)->except('show');
+    Route::resource('expenses', ExpenseController::class)->except('show');
+
     Route::resource('inventory-categories', InventoryCategoryController::class)->except('create', 'show');
-
     Route::resource('inventory-items', InventoryItemController::class)->except('index', 'create', 'show');
-
     Route::resource('inventory-records', InventoryRecordController::class)->except('show');
 
     Route::middleware(['admin'])->group(function() {
