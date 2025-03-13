@@ -21,6 +21,13 @@ class Expense extends Model
         'updated_by',
     ];
 
+    const PAYMENTMETHODS = [
+        'bank',
+        'cash',
+        'cheque',
+        'mpesa',
+    ];
+
     protected $casts = [
         'date' => 'datetime',
     ];
