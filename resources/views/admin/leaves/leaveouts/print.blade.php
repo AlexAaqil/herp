@@ -7,7 +7,7 @@
         <div class="container">
             <div class="header">
                 <div class="image">
-                    <img src="{{ Vite::asset('resources/images/default_image.jpg') }}" alt="School Logo" width="150px" height="150px">
+                    <img src="{{ asset('assets/images/default_image.jpg') }}" alt="School Logo" width="150px" height="150px">
                 </div>
 
                 <div class="text">

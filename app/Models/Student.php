@@ -13,16 +13,16 @@ class Student extends Model
 
     public function getFullNameAttribute()
     {
-        return $this->first_name ." ". $this->last_name;
+        return $this->first_name . " " . $this->last_name;
     }
 
     public function getImagePathAttribute()
     {
-        if($this->image && Storage::disk('public')->exists($this->image)) {
-            return asset('/storage/'.$this->image);
+        if ($this->image && Storage::disk('public')->exists($this->image)) {
+            return asset('/storage/' . $this->image);
         }
 
-        return Vite::asset('resources/images/default_profile.jpg');
+        return asset('assets/images/default_profile.jpg');
     }
 
     public function classroom()
