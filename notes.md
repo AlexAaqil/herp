@@ -340,16 +340,19 @@ salaries {
 }
 
 settings {
-    $table->string('school_name');
-    $table->string('school_acronym');
-    $table->string('school_address');
-    $table->string('school_phone_number');
-    $table->string('school_phone_other');
-    $table->string('school_email');
+    $table->string('school_name')->nullable();
+    $table->string('school_acronym')->nullable();
+    $table->string('school_address')->nullable();
+    $table->string('school_phone_number')->nullable();
+    $table->string('school_phone_other')->nullable();
+    $table->string('school_email')->nullable();
     $table->unsignedSmallInteger('current_year')->nullable();
     $table->unsignedTinyInteger('current_term')->nullable();
     $table->date('term_begins')->nullable();
     $table->date('term_ends')->nullable();
+    $table->string('bursar_stamp')->nullable();
+    $table->string('principal_stamp')->nullable();
+    $table->string('storekeeper_stamp')->nullable();
 }
 
 # Constants

@@ -31,6 +31,7 @@ use App\Http\Controllers\Payments\ExpenseController;
 use App\Http\Controllers\Inventory\InventoryCategoryController;
 use App\Http\Controllers\Inventory\InventoryItemController;
 use App\Http\Controllers\Inventory\InventoryRecordController;
+use App\Http\Controllers\SettingController;
 
 Route::view('/', 'index')->name('home-page');
 Route::view('/about', 'about')->name('about-page');
@@ -95,6 +96,11 @@ Route::middleware(['auth', 'verified', 'active'])->group(function() {
         Route::resource('grades', GradeController::class)->except('show');
 
         Route::resource('messages', MessageController::class)->only('index', 'edit', 'destroy');
+
+        Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+        Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
+        Route::put('/settings/update', [SettingController::class, 'update'])->name('settings.update');
+        Route::delete('/settings/delete', [SettingController::class, 'destroy'])->name('settings.destroy');
     });
 });
 

@@ -1311,6 +1311,32 @@ button:disabled {
   margin: 2em 0;
 }
 
+.Settings p {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 1fr;
+      grid-template-columns: 15% 1fr;
+  gap: 1em;
+  margin: 0 0 0.8em;
+}
+
+.Settings p span {
+  font-weight: bold;
+}
+
+.Settings p span:first-of-type {
+  color: #575757;
+  font-weight: 400;
+}
+
+.Settings .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2em;
+  margin: 4em 0 0;
+}
+
 @media screen and (min-width: 1024px) {
   .MainApp aside {
     width: 15%;

@@ -254,6 +254,30 @@
     }
 }
 
+.Settings {
+    p {
+        display: grid;
+        grid-template-columns: 15% 1fr;
+        gap: 1em;
+        margin: 0 0 0.8em;
+
+        span {
+            font-weight: bold;
+
+            &:first-of-type {
+                color: $faded_text;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .images {
+        display: flex;
+        gap: 2em;
+        margin: 4em 0 0;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .MainApp {
         aside {

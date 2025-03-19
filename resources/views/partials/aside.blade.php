@@ -140,6 +140,12 @@
                 'text' => 'Messages',
                 'level' => ['super admin', 'admin'],
             ],
+            [
+                'route' => 'settings.index',
+                'icon' => 'fas fa-cogs',
+                'text' => 'Settings',
+                'level' => ['super admin', 'admin'],
+            ],
         ]);
 
         $nav_links = $nav_content->filter(function($link) use($user_level_label) {
