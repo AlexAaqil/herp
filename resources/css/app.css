@@ -420,6 +420,19 @@ footer .container .branding .title {
   margin: 0.2em 0;
 }
 
+footer .container .branding p {
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+footer .container .branding .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  margin: 1em 0;
+}
+
 footer .container .links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -431,34 +444,23 @@ footer .container .links {
   gap: 0.5em;
 }
 
-footer .container .contacts .socials {
-  margin: 0.8em 0 0;
-}
-
-footer .container .contacts .socials img {
-  width: 24px;
-  height: 24px;
-  margin: 0 1em 0 0;
-}
-
 footer .copyright {
   border-top: 1px solid #c4c4c4;
   text-align: center;
   padding: 12px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   footer .container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 30% 1fr 1fr;
-        grid-template-columns: 30% 1fr 1fr;
+    -ms-grid-columns: 30% 1fr 1fr 1fr;
+        grid-template-columns: 30% 1fr 1fr 1fr;
   }
   footer .container section {
     margin: 0;
   }
-  footer .container .links,
-  footer .container .contacts {
+  footer .container .links {
     -ms-grid-column-align: center;
         justify-self: center;
   }

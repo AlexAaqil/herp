@@ -13,23 +13,23 @@ footer {
                 font-size: 1.5em;
                 margin: 0.2em 0;
             }
+
+            p {
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+
+            .socials {
+                display: flex;
+                gap: 1em;
+                margin: 1em 0;
+            }
         }
 
         .links {
             display: flex;
             flex-direction: column;
             gap: 0.5em;
-        }
-
-        .contacts {
-            .socials {
-                margin: 0.8em 0 0;
-                img {
-                    width: 24px;
-                    height: 24px;
-                    margin: 0 1em 0 0;
-                }
-            }
         }
     }
 
@@ -40,18 +40,17 @@ footer {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     footer {
         .container {
             display: grid;
-            grid-template-columns: 30% 1fr 1fr;
+            grid-template-columns: 30% 1fr 1fr 1fr;
 
             section {
                 margin: 0;
             }
 
-            .links,
-            .contacts {
+            .links {
                 justify-self: center;
             }
         }
