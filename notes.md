@@ -1,22 +1,3 @@
-# TODOs:
-App
-- Implement pagination.
-- Add settings here the stamp image logo and other common details can be customized.
-
-Payments
-- Find a way to handle excess payments.
-- Group the Periods in the page for managing payments.
-~~- Fix the link back to payment records from the generate_receipt page.~~
-
-Classrooms
-- Add searchable select for teachers.
-
-Teachers
-- Handle all CRUD operations for teachers in the TeacherController to avoid re-routing the uses page.
-
-Parents
-- Add the pages for updating and deleting parents.
-
 # Features
 users {
     super admin
