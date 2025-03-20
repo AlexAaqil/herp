@@ -1,18 +1,113 @@
 .ContactPage {
+    min-height: 90dvh;
+    display: flex;
+    align-items: center;
+    
     .container {
         display: grid;
-        gap: 1em;
-        align-items: center;
+        gap: 3em;
 
-        .text {
-            .title {
-                @include font_size(1.2em, 3.2em);
-                margin: 0 0 0.8em;
+        .contact_details {
+            padding: 16px 0 0;
+
+            .header {
+                margin: 0 0 2.5em;
+
+                h1 {
+                    margin: 0 0 0.5em;
+                    font-size: 1.84em;
+                }
             }
 
-            .content {
-                display: grid;
-                font-size: 2em;
+            .contact {
+                p {
+                    line-height: 1.5;
+                    margin: 0.5em 0;
+                    font-size: 1.28em;
+                }
+
+                .details {
+                    display: grid;
+                    gap: 2em;
+
+                    .detail {
+                        display: grid;
+                        grid-template-columns: 35px 1fr;
+                        align-items: center;
+                        gap: 0.5em;
+
+                        p {
+                            display: grid;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact_form {
+            .inputs {
+                position: relative;
+                min-height: 3.5rem;
+                margin-bottom: 2.5rem;
+
+                &:last-of-type {
+                    margin-bottom: 2rem;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 0.8rem;
+                    font-size: 1rem;
+                    border: 1px solid grey;
+                    border-radius: 8px;
+                    outline: none;
+                    transition: 0.3s ease-in-out;
+                    background: transparent;
+                
+                    &:focus {
+                        border-color: blue;
+                    }
+
+                    &:focus + label,
+                    &:not(:placeholder-shown) + label {
+                        top: -0.84rem;
+                        left: 0rem;
+                        font-size: 0.96rem;
+                        color: blue;
+                        padding: 0 0.4rem;
+                        background: white;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    left: 1rem;
+                    top: 1.5em;
+                    transform: translateY(-50%);
+                    font-size: 1rem;
+                    pointer-events: none;
+                    transition: 0.3s ease-in-out;
+                }
+
+                span {
+                    display: block;
+                    font-weight: bold;
+                    color: red;
+                    font-size: 0.9rem;
+                    margin-top: 0.3rem;
+                }
+            }
+
+            button {
+                background: black;
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
             }
         }
     }
@@ -63,10 +158,20 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     .ContactPage {
         .container {
             grid-template-columns: 1fr 1fr;
+
+            .contact_details {
+                p {
+                    width: 88%;
+                }
+            }
+
+            .contact_form {
+                padding: 16px;
+            }
         }
     }
 

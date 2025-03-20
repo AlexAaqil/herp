@@ -7,40 +7,65 @@
 
     <section class="Hero">
         <div class="container">
-            <div class="text">
-                <p class="title">Get in Touch</p>
+            <div class="contact_details">
+                <div class="header">
+                    <h1>Contact Us</h1>
+                    <p>Use the details below or fill out the form to get in touch with us for any inquiries, support and partnership opportunities.</p>
+                </div>
 
-                <p class="content">
-                    <span>{{ config('globals.app_phone_number') }}</span>
-                    <span>{{ config('globals.app_email') }}</span>
-                </p>
+                <div class="contact">
+                    <div class="details">
+                        <div class="detail">
+                            <img src="{{ asset('assets/images/email.png') }}" alt="Email" width="30" height="30">
+                            <p>{{ config('globals.app_email') }}</p>
+                        </div>
+
+                        <div class="detail">
+                            <img src="{{ asset('assets/images/telephone.png') }}" alt="Telephone" width="30" height="30">
+                            <p>
+                                <span>{{ config('globals.app_phone_number') }}</span>
+                                @if(!empty(config('globals.app_phone_other')))
+                                    <span>{{ config('globals.app_phone_other') }}</span>
+                                @endif
+                            </p>
+                        </div>
+
+                        <div class="detail">
+                            <img src="{{ asset('assets/images/clock.png') }}" alt="Clock" width="30" height="30">
+                            <p>
+                                <span>Mon to Fri</span>
+                                <span>08:00 A.M - 05:00 P.M</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="custom_form">
+            <div class="contact_form">
                 <form action="{{ route('messages.store') }}" method="post">
                     @csrf
 
                     <div class="inputs">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="name" id="name" placeholder="Full Name" value="{{ old('name') }}">
+                        <input type="text" name="name" id="name" placeholder="" value="{{ old('name') }}">
+                        <label for="name">First Name</label>
                         <x-input-error field="name" />
                     </div>
 
                     <div class="inputs">
+                        <input type="email" name="email" id="email" placeholder="" value="{{ old('email') }}">
                         <label for="email">Email Address</label>
-                        <input type="email" name="email" id="email" placeholder="Email Address" value="{{ old('email') }}">
                         <x-input-error field="email" />
                     </div>
 
                     <div class="inputs">
+                        <input type="text" name="phone_number" id="phone_number" placeholder="" value="{{ old('phone_number') }}">
                         <label for="phone_number">Phone Number</label>
-                        <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}">
                         <x-input-error field="phone_number" />
                     </div>
 
                     <div class="inputs">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" cols="30" rows="7" placeholder="Enter your message">{{ session('success') ? '' : request('message', old('message')) }}</textarea>
+                        <textarea name="message" id="message" rows="7" cols="30" placeholder="">{{ session('success') ? '' : request('message', old('message')) }}</textarea>
+                        <label for="message">Your message</label>
                         <x-input-error field="message" />
                     </div>
 
