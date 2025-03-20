@@ -951,7 +951,29 @@ button:disabled {
   color: #fff;
 }
 
-.ContactPage .container {
+.HomePage section {
+  margin: 0 0 8em;
+}
+
+.HomePage section .header {
+  margin: 0 0 2em;
+}
+
+.HomePage .Hero {
+  height: 70dvh;
+  width: 100dvw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HomePage .Hero .container {
   display: -ms-grid;
   display: grid;
   gap: 1em;
@@ -960,21 +982,223 @@ button:disabled {
           align-items: center;
 }
 
-.ContactPage .container .text .title {
+.HomePage .Hero .container .image {
+  width: 100%;
+  height: 100%;
+}
+
+.HomePage .Hero .container .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.HomePage .Hero .container .text .title {
+  line-height: 1.2;
+  font-size: 2.4em;
+  margin: 0 0 0.5em;
+}
+
+.HomePage .Hero .container .text .sub_title {
+  font-size: 1em;
+}
+
+.HomePage .Hero .container .text .btns {
+  margin: 2.4em 0;
+}
+
+.HomePage .Hero .container .text .btns a {
+  background: #000;
+  color: #fff;
+  padding: 12px 24px;
+  font-weight: bold;
   font-size: 1.2em;
-  margin: 0 0 0.8em;
+  border-radius: 8px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.HomePage .Hero .container .text .btns a:hover {
+  -webkit-box-shadow: 2px 4px 8px #000;
+          box-shadow: 2px 4px 8px #000;
+}
+
+.HomePage .About .container .content {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+}
+
+.HomePage .About .container .content .image {
+  text-align: center;
+}
+
+.HomePage .About .container .content .image img {
+  border-radius: 8px;
+}
+
+.HomePage .About .container .content ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 0.4em 2em;
+  padding: 16px 8px;
 }
 
 @media screen and (min-width: 1024px) {
-  .ContactPage .container .text .title {
-    font-size: 3.2em;
+  .HomePage .Hero {
+    height: 90dvh;
+    width: 100%;
+  }
+  .HomePage .Hero .container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    padding-right: unset;
+  }
+  .HomePage .Hero .container .text .title {
+    font-size: 4em;
+  }
+  .HomePage .Hero .container .text .sub_title {
+    font-size: 1.2em;
+  }
+  .HomePage .Hero .container .image {
+    height: 90dvh;
+  }
+  .HomePage .About .container .content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
-.ContactPage .container .text .content {
+.ContactPage {
+  min-height: 90dvh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ContactPage .container {
   display: -ms-grid;
   display: grid;
-  font-size: 2em;
+  gap: 3em;
+}
+
+.ContactPage .container .contact_details {
+  padding: 16px 0 0;
+}
+
+.ContactPage .container .contact_details .header {
+  margin: 0 0 2.5em;
+}
+
+.ContactPage .container .contact_details .header h1 {
+  margin: 0 0 0.5em;
+  font-size: 1.84em;
+}
+
+.ContactPage .container .contact_details .contact p {
+  line-height: 1.5;
+  margin: 0.5em 0;
+  font-size: 1.28em;
+}
+
+.ContactPage .container .contact_details .contact .details {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+}
+
+.ContactPage .container .contact_details .contact .details .detail {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35px 1fr;
+      grid-template-columns: 35px 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5em;
+}
+
+.ContactPage .container .contact_details .contact .details .detail p {
+  display: -ms-grid;
+  display: grid;
+}
+
+.ContactPage .container .contact_form .inputs {
+  position: relative;
+  min-height: 3.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.ContactPage .container .contact_form .inputs:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.ContactPage .container .contact_form .inputs input,
+.ContactPage .container .contact_form .inputs textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid grey;
+  border-radius: 8px;
+  outline: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  background: transparent;
+}
+
+.ContactPage .container .contact_form .inputs input:focus,
+.ContactPage .container .contact_form .inputs textarea:focus {
+  border-color: blue;
+}
+
+.ContactPage .container .contact_form .inputs input:focus + label,
+.ContactPage .container .contact_form .inputs input:not(:placeholder-shown) + label,
+.ContactPage .container .contact_form .inputs textarea:focus + label,
+.ContactPage .container .contact_form .inputs textarea:not(:placeholder-shown) + label {
+  top: -0.84rem;
+  left: 0rem;
+  font-size: 0.96rem;
+  color: blue;
+  padding: 0 0.4rem;
+  background: white;
+}
+
+.ContactPage .container .contact_form .inputs label {
+  position: absolute;
+  left: 1rem;
+  top: 1.5em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.ContactPage .container .contact_form .inputs span {
+  display: block;
+  font-weight: bold;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.ContactPage .container .contact_form button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .MainApp .UserMessage .header p span {
@@ -1011,10 +1235,16 @@ button:disabled {
   padding: unset;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .ContactPage .container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  .ContactPage .container .contact_details p {
+    width: 88%;
+  }
+  .ContactPage .container .contact_form {
+    padding: 16px;
   }
   .UserMessage {
     width: 40dvw;
