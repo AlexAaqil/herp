@@ -1,6 +1,6 @@
 <x-guest-layout class="HomePage">
     <x-slot name="head">
-        <title>Home | {{ config('globals.app_name') }}</title>
+        <title>{{ config('globals.app_name') }} | Home</title>
         <meta name="description" content="Home page description">
         <meta name="keywords" content="home, website, example">
     </x-slot>
@@ -23,14 +23,14 @@
 
     <section class="About">
         <div class="container">
-            <div class="header">
+            <div class="section_header">
                 <h2>About {{ config('globals.app_acronym') }}</h2>
             </div>
 
             <div class="content">
                 <div class="text">
                     <p>{{ config('globals.app_acronym') }} helps you manage all school operations seamlessly.</p>
-                    <ul>
+                    <ul class="features_list">
                         <li>Academic Perfomance</li>
                         <li>Student's Assignments</li>
                         <li>Teacher's Schedules</li>
@@ -49,74 +49,90 @@
 
     <section class="Pricing">
         <div class="container">
-            <div class="header">
+            <div class="section_header">
                 <h2>Pricing</h2>
                 <p>Affordable for any school size</p>
             </div>
 
             <div class="content">
                 <div class="card">
-                    <p class="title">
-                        <span>One Time Purchase</span>
-                        <span>Ksh. 150,000/=</span>
-                    </p>
-                    <p>What you get</p>
-                    <ul>
-                        <li>System Installation</li>
-                        <li>Student Management</li>
-                        <li>Staff Management</li>
-                        <li>Academic Performace Reports</li>
-                        <li>Downloadable Assignments</li>
-                    </ul>
+                    <div class="header">
+                        <p>
+                            <span>Standard</span>
+                            <span>Ksh. 200,000/=</span>
+                        </p>
+                        <p>
+                            <span>Per Term</span>
+                            <span>Ksh. 0/=</span>
+                        </p>
+                    </div>
+                   <div class="card_content">
+                        <ul class="features_list">
+                            <li>Customized School Website</li>
+                            <li>System Installation</li>
+                            <li>Student Management</li>
+                            <li>Staff Management</li>
+                            <li>Academic Performace Reports</li>
+                            <li>Downloadable Assignments</li>
+                        </ul>
+                   </div>
                 </div>
 
                 <div class="card">
-                    <p class="title">
-                        <span>Rolling Purchase</span>
-                        <span>Ksh. 150,000/=</span>
-                    </p>
-                    <p>What you get</p>
-                    <ul>
-                        <li>System Installation</li>
-                        <li>Student Management</li>
-                        <li>Staff Management</li>
-                        <li>Academic Performace Reports</li>
-                        <li>Downloadable Assignments</li>
-                        <li>Software Maintenance & Updates</li>
-                        <li>Technical Support</li>
-                    </ul>
+                    <div class="header">
+                        <p>
+                            <span class="popular">Pro</span>
+                            <span>Ksh. 120,000/=</span>
+                        </p>
+                        <p>
+                            <span>Per Term</span>
+                            <span>Ksh. 40,000</span>
+                        </p>
+                    </div>
+                    <div class="card_content">
+                        <ul class="features_list">
+                            <li>Customized School Website</li>
+                            <li>System Installation</li>
+                            <li>Student Management</li>
+                            <li>Staff Management</li>
+                            <li>Academic Performace Reports</li>
+                            <li>Downloadable Assignments</li>
+                            <li>Software Maintenance & Updates</li>
+                            <li>24/7 Technical Support</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="FAQ">
+    <section class="FAQs">
         <div class="container">
-            <div class="header">
+            <div class="section_header">
                 <h2>FAQ</h2>
                 <p>Some of the most common questions we get</p>
             </div>
 
             <div class="content">
-                <div class="question_answer">
-                    <p class="question">What is {{ config('globals.app_name') }}?</p>
-                    <p class="answer">We help schools manage their daily tasks efficiently.</p>
-                </div>
+                <details>
+                    <summary>What is {{ config('globals.app_name') }}?</summary>
+                    <p>We help schools manage their daily tasks efficiently.</p>
+                </details>
 
-                <div class="question_answer">
-                    <p class="question">What is the security like?</p>
-                    <p class="answer">We implement robust security measures, including encrypted data storage, role-based access control, and two-factor authentication (2FA) for enhanced security.</p>
-                </div>
+                <details>
+                    <summary>What is the security like?</summary>
+                    <p>We implement robust security measures, including encrypted data storage, role-based access control, and two-factor authentication (2FA) for enhanced security.</p>
+                </details>
 
-                <div class="question_answer">
-                    <p class="question">How do teachers and students access the system?</p>
-                    <p class="answer">Teachers and parents can securely log in using their provided credentials. The system supports email-based login, password recovery, and two-factor authentication for extra security.</p>
-                </div>
+                <details>
+                    <summary>How do teachers and students access the system?</summary>
+                    <p>Teachers and parents can securely log in using their provided credentials. The system supports email-based login, password recovery, and two-factor authentication for extra security.</p>
+                </details>
 
-                <div class="question_answer">
-                    <p class="question">How do I reach out for technical support?</p>
-                    <p class="answer">We offer a 24/7 customer support, training sessions for your staff, teachers and students.</p>
-                </div>
+                <details>
+                    <summary>How do I reach out for technical support?</summary>
+                    <p>We offer 24/7 customer support and training sessions for your staff, teachers, and students.</p>
+                </details>
             </div>
         </div>
     </section>
