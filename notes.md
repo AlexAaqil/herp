@@ -376,3 +376,126 @@ const STATUSES = [
     'returned',
     'lost',
 ];
+
+
+# User Journeys
+## Super Admin
+- Can RUD messages from users through the contact form.
+
+- Can update the school's settings like the name, logo and stamps.
+- Can CRUD classrooms.
+- Can CRUD dorms.
+- Can CRUD subjects.
+- Can CRUD grades.
+
+- Can CRUD users and their user levels including super admins.
+
+- Can CRUD recipients of payments made from the school as expenses.
+- Can CRUD payments made from the school as expenses.
+- Can CRUD payments made by students to the school.
+- Can CRUD inventory categories and records for items going in and out of the store.
+
+- Can CRUD leavouts issued to students.
+- Can CRUD disciplinaries issued to students.
+- Can CRUD exams and exam records for students.
+- Can CRUD assignments issued to students or download.
+- Can CRUD textbooks issued to students.
+
+- Can CRUD teachers schedules (timetable).
+
+- Can CRUD leave requests from the staff.
+
+
+
+## Admin
+- Can RUD messages from users through the contact form.
+
+- Can CRUD classrooms.
+- Can CRUD dorms.
+- Can CRUD subjects.
+- Can CRUD grades.
+
+- Can RU user details except the user levels.
+
+- Can CRUD recipients of payments made from the school as expenses.
+- Can CRUD payments made from the school as expenses.
+- Can CRUD payments made by students to the school.
+
+- Can CRUD inventory categories and records for items going in and out of the store.
+
+- Can CRUD leavouts issued to students.
+- Can CRUD disciplinaries issued to students.
+- Can CRUD exams and exam records for students.
+- Can CRUD assignments issued to students or download.
+- Can CRUD textbooks issued to students.
+
+- Can CRUD teachers schedules (timetable).
+
+- Can CRUD leave requests from the staff.
+
+
+
+## Accountant
+- Can CRUD recipients of payments made from the school as expenses.
+- Can CRUD payments made from the school as expenses.
+- Can CRUD payments made by students to the school.
+
+- Can R inventory records for items going in and out of the store.
+
+- Can apply for leaves.
+
+
+
+## Store Keeper
+- Can CRUD inventory records for items going in and out of the store.
+
+- Can apply for leaves.
+
+
+
+## Teacher
+- Can R their schedule (timetable).
+
+- Can CRUD assignments that can be downloaded by students.
+
+- Can CRUD leaveouts they have issued to students.
+- Can R other leaveouts issued by other teachers.
+
+- Can apply for leaves.
+
+
+
+## BOM
+- Can R user details.
+
+- Can CRUD leave requests from the staff.
+
+- Can R teachers schedule (timetable).
+
+- Can manually generate a gate pass for a student.
+- Can R expenses.
+- Can R payments made by students.
+
+
+
+
+## Student
+- Can R their details.
+
+- Can R their exam records.
+- Can R their disciplinary records.
+- Can R leaveouts issued to them.
+- Can R textbooks issued to them.
+
+- Can download the assignments issued by teachers.
+
+
+## Parent
+- Can R their details.
+
+- Can R their exam records.
+- Can R their disciplinary records.
+- Can R leaveouts issued to them.
+- Can R textbooks issued to them.
+
+- Can download the assignments issued by teachers.
